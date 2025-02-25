@@ -68,7 +68,6 @@ document.getElementById("master-btn").addEventListener("click", function () {
      <div class="info">
 
    <div id="myChart4" class="chart--container">
-  <a href="https://www.zingchart.com/" rel="noopener" class="zc-ref">Powered by ZingChart</a>
 </div>`;
 
   let chartData = [
@@ -342,7 +341,6 @@ document.getElementById("slave-btn").addEventListener("click", function () {
               <div class="color-9"></div>
             </div>
       <div id="myChart5" class="chart--container">
-      <a href="https://www.zingchart.com/" rel="noopener" class="zc-ref">Powered by ZingChart</a>
     </div>`;
 
   // full ZingChart schema can be found here:
