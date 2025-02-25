@@ -194,7 +194,7 @@ a:hover i {
   box-shadow: 5px 5px 10px #cac9c9, -5px -5px 10px #dfdcdc;
   display: flex;
   justify-content: space-between;
-  height: 190px;
+  height: 240px;
 }
 .gradient-bar {
   position: absolute;
@@ -567,11 +567,21 @@ table thead tr {
   width: 350px;
   border-radius: 8px;
   padding: 10px;
+  margin-top: 10px;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  height: 180px; /* Cố định chiều cao */
+  height: 210px; /* Cố định chiều cao */
   overflow-y: auto; /* Kích hoạt cuộn dọc */
+  border: 1px dashed #e3e0e0;
+}
+
+#support {
+  width: 320px;
+  border-radius: 8px;
+  margin-top: 10px;
+  background-color: #ffffff;
+  border: 1px dashed #e3e0e0;
 }
 
 .chat-box h2 {
@@ -956,12 +966,4 @@ th {
   padding: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   text-align: center;
-}
-
-#support {
-  width: 290px;
-  border-radius: 8px;
-  margin-top: 10px;
-  background-color: #f3f3f3;
-  border: 2px dashed rgb(166, 166, 166);
 }
