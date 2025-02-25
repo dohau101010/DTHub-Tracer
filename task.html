@@ -335,35 +335,6 @@
         console.log("Không có tên người dùng trong sessionStorage.");
       }
     </script>
-    <script>
-      const spans = document.querySelectorAll(".progress-bar span");
-
-      spans.forEach((span) => {
-        span.style.width = span.dataset.width;
-        span.innerHTML = span.dataset.width;
-      });
-    </script>
-    <script>
-      const numbers = document.querySelectorAll(".number");
-      const svgEl = document.querySelectorAll("svg circle");
-      const counters = Array(numbers.length);
-      const intervals = Array(counters.length);
-      counters.fill(0);
-
-      numbers.forEach((number, index) => {
-        intervals[index] = setInterval(() => {
-          if (counters[index] === parseInt(number.dataset.num)) {
-            clearInterval(counters[index]);
-          } else {
-            counters[index] += 1;
-            number.innerHTML = counters[index] + "%";
-            svgEl[index].style.strokeDashoffset = Math.floor(
-              472 - 440 * parseFloat(number.dataset.num / 100)
-            );
-          }
-        }, 20);
-      });
-    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
