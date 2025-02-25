@@ -72,6 +72,20 @@
       .zc-controls button[disabled] {
         cursor: not-allowed;
       }
+
+      #myChart {
+        width: 100%;
+        height: 100%; /* Hoặc bất kỳ kích thước nào bạn muốn */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .responsive-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Giữ nguyên tỉ lệ */
+      }
     </style>
   </head>
 
@@ -164,7 +178,9 @@
               <div class="color-9"></div>
             </div>
             <div class="main-container">
-              <div id="myChart" class="chart--container"></div>
+              <div id="myChart">
+                <img src="./img/chart4.svg" class="responsive-img" />
+              </div>
             </div>
             <div class="chat-box">
               <div class="chat-messages" id="chat-messages">
@@ -292,7 +308,7 @@
       };
       firebase.initializeApp(firebaseConfig);
     </script>
-    <script>
+    <!-- <script>
       let chartConfig = {
         globals: {
           fontFamily: "Lucida Sans Unicode",
@@ -425,16 +441,13 @@
 
       zingchart.render({
         id: "myChart",
-         data: {
-          chartConfig,
-          credits: { visible: false }, // Ẩn watermark
-        },
+        data: chartConfig,
+
         height: "160px",
         width: "600px",
         modules: "scorecard",
-         hideprogresslogo: true, // Ẩn watermark
       });
-    </script>
+    </script> -->
     <script>
       // INIT
       // -----------------------------
@@ -563,11 +576,6 @@
             },
           ],
           shapes: [],
-          source: {
-            fontSize: "12px",
-            margin: "auto 25px 25px 25px",
-            text: "Welcome back to Task board!",
-          },
           series: [],
         };
 
@@ -630,7 +638,6 @@
               tick = window.setInterval(fnStep, 150);
             },
           },
-           hideprogresslogo: true, // Ẩn watermark
         });
 
         function fnStep() {
