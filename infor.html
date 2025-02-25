@@ -425,7 +425,10 @@
 
       zingchart.render({
         id: "myChart",
-        data: chartConfig,
+         data: {
+          chartConfig,
+          credits: { visible: false }, // Ẩn watermark
+        },
         height: "160px",
         width: "600px",
         modules: "scorecard",
