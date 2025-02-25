@@ -69,9 +69,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         // Nếu Value = 1, set data-num = 90% và cập nhật nội dung
         console.log(trials);
-        // let data = trials;
-        // numberElementTrials.setAttribute("data-num", (data * 10 + 10) % 100);
-        // numberElementTrials.textContent = "90%";
+        let data = trials;
+        numberElementTrials.setAttribute("data-num", (data * 10 + 10) % 100);
+        numberElementTrials.textContent = "90%";
       })
       .catch((error) => {
         console.error("Lỗi khi đọc dữ liệu từ Firebase:", error);
