@@ -5,6 +5,40 @@ document.querySelector(".close-btn").addEventListener("click", function () {
 
 // ....................................................Check cert........................................................
 document.addEventListener("DOMContentLoaded", function () {
+  const numbers = document.querySelectorAll(".number");
+  const svgEl = document.querySelectorAll("svg circle");
+  const counters = Array(numbers.length).fill(0);
+  const intervals = Array(counters.length);
+
+  function updateProgress() {
+    numbers.forEach((number, index) => {
+      let target = parseInt(number.dataset.num);
+
+      if (counters[index] !== target) {
+        counters[index] = 0; // Reset bộ đếm
+        clearInterval(intervals[index]); // Dừng interval cũ nếu có
+
+        intervals[index] = setInterval(() => {
+          if (counters[index] === target) {
+            clearInterval(intervals[index]);
+          } else {
+            counters[index] += 1;
+            number.innerHTML = counters[index] + "%";
+            svgEl[index].style.strokeDashoffset = Math.floor(
+              472 - 440 * (target / 100)
+            );
+          }
+        }, 20);
+      }
+    });
+  }
+
+  const spans = document.querySelectorAll(".progress-bar span");
+  spans.forEach((span) => {
+    span.style.width = span.dataset.width;
+    span.innerHTML = span.dataset.width;
+  });
+
   const userName = sessionStorage.getItem("userName");
 
   if (userName) {
@@ -14,69 +48,58 @@ document.addEventListener("DOMContentLoaded", function () {
     userRef
       .once("value")
       .then((snapshot) => {
-        const value = snapshot.val().Value; // Lấy giá trị từ Firebase
-        const IQvalue = snapshot.val().IQValue; // Lấy giá trị từ Firebase
-        const trials = snapshot.val().Trials; // Lấy giá trị từ Firebase
-        // Tìm phần tử có class "number" và "data-num"
+        const value = snapshot.val().Value;
+        const IQvalue = snapshot.val().IQValue;
+        const trials = snapshot.val().Trials;
+
+        // Cập nhật giá trị từ Firebase
         const numberElement = document.querySelector(".number");
         const numberElementIQ = document.querySelector(".numberx");
         const numberElementTrials = document.querySelector(".numberxx");
 
-        if (value == 0) {
-          // Nếu Value = 0, set data-num = 10% và cập nhật nội dung
-          numberElement.setAttribute("data-num", "50");
-          numberElement.textContent = "50%";
-        } else if (value == 1) {
-          // Nếu Value = 1, set data-num = 90% và cập nhật nội dung
-          numberElement.setAttribute("data-num", "90");
-          numberElement.textContent = "90%";
+        if (numberElement) {
+          numberElement.setAttribute("data-num", value == 0 ? "50" : "90");
+          numberElement.textContent = value == 0 ? "50%" : "90%";
         }
 
-        const IA_Status_Cell = document.querySelector(
-          "#resizableTable tbody tr:nth-child(1) td:nth-child(6)"
-        );
+        if (numberElementIQ) {
+          numberElementIQ.setAttribute("data-num", IQvalue == 0 ? "50" : "90");
+          numberElementIQ.textContent = IQvalue == 0 ? "50%" : "90%";
+        }
 
-        if (IA_Status_Cell) {
-          if (value == 0) {
-            IA_Status_Cell.innerHTML = '<span class="status new">New</span>';
-          } else {
-            IA_Status_Cell.innerHTML =
-              '<span class="status analyzed">Analyzed</span>';
+        if (numberElementTrials) {
+          let currentTrials = numberElementTrials.getAttribute("data-num");
+          if (currentTrials !== String(trials)) {
+            numberElementTrials.setAttribute(
+              "data-num",
+              String((trials * 10 + 10) % 100)
+            );
+            numberElementTrials.textContent = trials + "%";
           }
         }
 
-        if (IQvalue == 0) {
-          // Nếu Value = 0, set data-num = 10% và cập nhật nội dung
-          numberElementIQ.setAttribute("data-num", "50");
-          numberElementIQ.textContent = "50%";
-        } else if (value == 1) {
-          // Nếu Value = 1, set data-num = 90% và cập nhật nội dung
-          numberElementIQ.setAttribute("data-num", "90");
-          numberElementIQ.textContent = "90%";
+        // Cập nhật trạng thái bảng
+        const IA_Status_Cell = document.querySelector(
+          "#resizableTable tbody tr:nth-child(1) td:nth-child(6)"
+        );
+        if (IA_Status_Cell) {
+          IA_Status_Cell.innerHTML =
+            value == 0
+              ? '<span class="status new">New</span>'
+              : '<span class="status analyzed">Analyzed</span>';
         }
 
         const IA_Status_CellIQ = document.querySelector(
           "#resizableTable tbody tr:nth-child(2) td:nth-child(6)"
         );
-
         if (IA_Status_CellIQ) {
-          if (IQvalue == 0) {
-            IA_Status_CellIQ.innerHTML = '<span class="status new">New</span>';
-          } else {
-            IA_Status_CellIQ.innerHTML =
-              '<span class="status analyzed">Analyzed</span>';
-          }
+          IA_Status_CellIQ.innerHTML =
+            IQvalue == 0
+              ? '<span class="status new">New</span>'
+              : '<span class="status analyzed">Analyzed</span>';
         }
-        // Nếu Value = 1, set data-num = 90% và cập nhật nội dung
-        console.log(trials);
-        let data = trials;
-        if (numberElementTrials.getAttribute("data-num") !== String(trials)) {
-    numberElementTrials.setAttribute("data-num", trials);
-    numberElementTrials.textContent = trials + "%";
-}
 
-        numberElementTrials.setAttribute("data-num", (data * 10 + 10) % 100);
-       
+        updateProgress(); // Cập nhật vòng tròn tiến trình
       })
       .catch((error) => {
         console.error("Lỗi khi đọc dữ liệu từ Firebase:", error);
@@ -173,21 +196,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ................................
-window.addEventListener("load", () => {
-  if (!localStorage.getItem("sessionActive")) {
-    firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        window.location.href = "login.html";
-      });
-  }
-  localStorage.setItem("sessionActive", "true");
-});
-
-window.addEventListener("beforeunload", () => {
-  localStorage.removeItem("sessionActive");
-});
 
 // ......................................................................................................
 document
