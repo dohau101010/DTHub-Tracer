@@ -558,9 +558,9 @@ h1 {
 
 /* ........................................................................................................ */
 figure {
-  margin-top: 30px;
+  margin-top: 15px;
 }
-px .tree,
+.tree,
 .tree ul,
 .tree li {
   list-style: none;
@@ -570,7 +570,7 @@ px .tree,
 }
 
 .tree {
-  margin: 0 0 1em;
+  margin: 0 0;
   text-align: center;
 }
 .tree,
