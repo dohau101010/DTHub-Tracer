@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Power Tools | DTHub-Tracer</title>
+    <link rel="stylesheet" href="./test.css" />
+    <!-- Font Awesome Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="line"></div>
+    <header class="header">
+      <div class="logos">
+        <a href="#">TraceTool-PS</a>
+        <div class="search_box">
+          <input type="search" placeholder="Search Traceability" />
+          <i class="fa-solid fa-search"></i>
+        </div>
+      </div>
+      <div class="user-info">
+        <img class="acc" src="./img/user.png" alt="" />
+        <div id="username">Hello! Fixed-Term Diem Trinh</div>
+      </div>
+
+      <div class="header-icons">
+        <i class="fas fa-bell"></i>
+        <div class="account">
+          <h4 class="dthub">DTHub</h4>
+          <img class="key" src="./img/msn3-5.png" alt="" />
+        </div>
+      </div>
+    </header>
+
+    <div class="container1">
+      <nav>
+        <ul>
+          <li>
+            <a href="#" class="logo">
+              <img src="./img/icon_global.png" />
+              <span class="nav-item1" style="color: black">Work Trace</span>
+            </a>
+          </li>
+          <li>
+            <a href="./main.html">
+              <i class="fas fa-solar-panel"></i>
+              <span class="nav-item">Item Panel</span>
+            </a>
+          </li>
+          <li>
+            <a href="./task.html" style="margin-left: 5px">
+              <i class="fas fa-list-check"></i>
+              <span class="nav-item">Certification</span>
+            </a>
+          </li>
+          <li>
+            <a href="./report.html" style="margin-left: 17px">
+              <i class="fas fa-users-rectangle"></i>
+              <span class="nav-item">Learning Portal</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" id="traceBoxLink">
+              <i class="fas fa-table-list" style="margin-left: 5px"></i>
+              <span class="nav-item">Trace Box</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-user-tie"></i>
+              <span class="nav-item">About me</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="main">
+        <h1 class="tt" style="font-weight: 500">Overview of list work items</h1>
+        <div class="attendance-list1">
+          <div class="table1">
+            <table id="emp-table">
+              <thead>
+                <th col-index="1">No</th>
+                <th col-index="2">Subject Code</th>
+                <th col-index="3">Description</th>
+                <th col-index="5">Class</th>
+                <th col-index="6">Type</th>
+                <th col-index="7">State</th>
+                <th col-index="8">Accessed</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>01</td>
+                  <td>WI_BK_ElecCir</td>
+                  <td>Electric Circuit</td>
+                  <td>Board knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state_non">In-Progress</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>02</td>
+                  <td>WI_BK_BasElec</td>
+                  <td>Basic Electronics</td>
+                  <td>Board knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>03</td>
+                  <td>WI_BK_AppMath</td>
+                  <td>Applied Math for EEE</td>
+                  <td>Board knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state_non">In-Progress</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>04</td>
+                  <td>WI_BK_SenMea</td>
+                  <td>Sensor & Measurement</td>
+                  <td>Board knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>05</td>
+                  <td>WI_BK_DigSys</td>
+                  <td>Digital Systems</td>
+                  <td>Board knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>06</td>
+                  <td>WI_BK_SigSys</td>
+                  <td>Signals and Systems</td>
+                  <td>Board knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>07</td>
+                  <td>WI_BK_EleFie</td>
+                  <td>Electromagnetic Field</td>
+                  <td>Board knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>08</td>
+                  <td>WI_BK_DataCom</td>
+                  <td>Data Communication</td>
+                  <td>Board knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>09</td>
+                  <td>WI_BK_MicEng</td>
+                  <td>Microprocessor</td>
+                  <td>Board knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>WI_BK_MicLab</td>
+                  <td>Microprocessor Lab</td>
+                  <td>Board knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>WI_BK_ComSys</td>
+                  <td>Communication System</td>
+                  <td>Specialized knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td>WI_BK_ComLab</td>
+                  <td>Communication Systems Lab</td>
+                  <td>Specialized knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td>WI_BK_ICSysDes</td>
+                  <td>Integrated Circuits & System Design</td>
+                  <td>Specialized knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td>WI_BK_ICSDLab</td>
+                  <td>FPGA Laboratory</td>
+                  <td>Specialized knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td>WI_BK_WirComSys</td>
+                  <td>Wireless Communication Systems</td>
+                  <td>Specialized knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state_non">In-Progress</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>16</td>
+                  <td>WI_BK_VLSI</td>
+                  <td>Very Large Scale Integration</td>
+                  <td>Specialized knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>17</td>
+                  <td>WI_BK_VLSILab</td>
+                  <td>VLSI Laboratory</td>
+                  <td>Specialized knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>18</td>
+                  <td>WI_BK_DSP</td>
+                  <td>Digital Signal Processing</td>
+                  <td>Specialized knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>19</td>
+                  <td>WI_BK_DSPL</td>
+                  <td>Digital Signal Processing lab</td>
+                  <td>Specialized knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>20</td>
+                  <td>WI_BK_IOT</td>
+                  <td>Internet of Things</td>
+                  <td>Specialized knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>21</td>
+                  <td>WI_BK_IOTL</td>
+                  <td>Internet of Things Laboratory</td>
+                  <td>Specialized knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>22</td>
+                  <td>WI_BK_ArtInt</td>
+                  <td>Artificial Intelligent</td>
+                  <td>Specialized knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>23</td>
+                  <td>WI_BK_MicroEng</td>
+                  <td>Microwave Engineering</td>
+                  <td>Specialized knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>24</td>
+                  <td>WI_BK_DigCom</td>
+                  <td>Digital Communication</td>
+                  <td>Specialized knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>25</td>
+                  <td>WI_BK_MobCom</td>
+                  <td>Mobility Communication</td>
+                  <td>Specialized knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state_non">In-Progress</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>26</td>
+                  <td>WI_BK_Calc1</td>
+                  <td>Calculus 1</td>
+                  <td>General knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state_non">In-Progress</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>27</td>
+                  <td>WI_BK_Calc2</td>
+                  <td>Calculus 2</td>
+                  <td>General knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state_non">In-Progress</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>28</td>
+                  <td>WI_BK_Calc3</td>
+                  <td>Calculus 3</td>
+                  <td>General knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state_non">In-Progress</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>29</td>
+                  <td>WI_BK_AppProb</td>
+                  <td>Statistical Probability Applications</td>
+                  <td>General knowledge</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state_non">In-Progress</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>30</td>
+                  <td>WI_PJ_SenProI</td>
+                  <td>Senior Project I</td>
+                  <td>Technical Project</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state_non">In-Progress</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>31</td>
+                  <td>WI_PJ_SenProII</td>
+                  <td>Senior Project II</td>
+                  <td>Technical Project</td>
+                  <td>Document/Lecture slide</td>
+                  <td><button class="sub-state_non">In-Progress</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>32</td>
+                  <td>WI_RF_CleCod</td>
+                  <td>Referenced Resources</td>
+                  <td>Functional Manual</td>
+                  <td>Document/Note book</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>33</td>
+                  <td>WI_RF_CleArc</td>
+                  <td>Referenced Resources</td>
+                  <td>Functional Manual</td>
+                  <td>Document/Note book</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>34</td>
+                  <td>WI_RF_AgTest</td>
+                  <td>Referenced Resources</td>
+                  <td>Functional Manual</td>
+                  <td>Document/Note book</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>35</td>
+                  <td>WI_RF_UXUI</td>
+                  <td>Referenced Resources</td>
+                  <td>Functional Manual</td>
+                  <td>Document/Note book</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>36</td>
+                  <td>WI_RF_AmpCoo</td>
+                  <td>Referenced Resources</td>
+                  <td>Functional Manual</td>
+                  <td>Document/Note book</td>
+                  <td><button class="sub-state">Available</button></td>
+                  <td>
+                    <div class="containerx">
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <span data-width="90%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="btn">
+            <div id="item-count">Showing 1 to 4 of 32 items</div>
+            <div class="button-group">
+              <button id="back-btn" onclick="showPreviousRows()">
+                ⮜ Previous
+              </button>
+              <button id="next-btn" onclick="showNextRows()">⮞ Next</button>
+            </div>
+          </div>
+        </div>
+        <div class="attendance-list">
+          <div class="gradient-bar">
+            <div class="color-1"></div>
+            <div class="color-2"></div>
+            <div class="color-3"></div>
+            <div class="color-4"></div>
+            <div class="color-5"></div>
+            <div class="color-6"></div>
+            <div class="color-7"></div>
+            <div class="color-8"></div>
+            <div class="color-9"></div>
+          </div>
+          <div class="container">
+            <h1 class="level-1 rectangle">WORK ITEM LIST</h1>
+            <ol class="level-2-wrapper">
+              <li>
+                <h2 class="level-2 rectangle">Broad Item</h2>
+                <ol class="level-3-wrapper">
+                  <li>
+                    <h3 class="level-3 rectangle">Internal</h3>
+                    <ol class="level-4-wrapper">
+                      <li>
+                        <h4 class="level-4 rectangle int-sub-1">
+                          EleCir
+                          <span class="tooltiptext">
+                            <div class="folder">
+                              Learning document
+                              <div class="file file-pdf">
+                                [Internal] Chapter 1: Introduction of Artificial
+                                Intelligent.pdf
+                              </div>
+                            </div>
+                            <div class="folder">
+                              Lecture slide
+                              <div class="file file-pptx">
+                                [Internal] Chapter 1: Introduction of Artificial
+                                Intelligent.pptx
+                              </div>
+                            </div>
+                            <div class="folder">
+                              Term Test
+                              <div class="file file-pdf">
+                                [Internal] Chapter 1: Introduction of Artificial
+                                Intelligent.pdf
+                              </div>
+                            </div>
+                            <div class="folder">
+                              Final Test
+                              <div class="file file-pdf">
+                                [Internal] Chapter 1: Introduction of Artificial
+                                Intelligent.pdf
+                              </div>
+                            </div>
+                          </span>
+                        </h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">BasElec</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">AppMath</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">SenMea</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">DigSys</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">SigSys</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">EleFie</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">DataCom</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">MicEng</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">MicLab</h4>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <h3 class="level-3 rectangle ext">External</h3>
+                    <ol class="level-4-wrapper">
+                      <li>
+                        <h4 class="level-4 rectangle">EleCir</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">BasElec</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">AppMath</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">SenMea</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">DigSys</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">SigSys</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">EleFie</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">DataCom</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">MicEng</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">MicLab</h4>
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <h2 class="level-2 rectangle">Specialised Item</h2>
+                <ol class="level-3-wrapper">
+                  <li>
+                    <h3 class="level-3 rectangle">Internal</h3>
+                    <ol class="level-4-wrapper">
+                      <li>
+                        <h4 class="level-4 rectangle">ComSys</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">ComLab</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">ICSysDes</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">ICSDLab</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">WirComSys</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">VLSI</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">VLSILab</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">DSP</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">DSPL</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">IOT</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">IOTL</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">ArtInt</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">MicroEng</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">DigCom</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">MobCom</h4>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <h3 class="level-3 rectangle">External</h3>
+                    <ol class="level-4-wrapper">
+                      <li>
+                        <h4 class="level-4 rectangle">ComSys</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">ComLab</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">ICSysDes</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">ICSDLab</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">WirComSys</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">VLSI</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">VLSILab</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">DSP</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">DSPL</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">IOT</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">IOTL</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">ArtInt</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">MicroEng</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">DigCom</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">MobCom</h4>
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <!-- Thêm nhánh Checklist C -->
+              <li>
+                <h2 class="level-2 rectangle">Other Package</h2>
+                <ol class="level-3-wrapper">
+                  <li>
+                    <h3 class="level-3 rectangle">Project</h3>
+                    <ol class="level-4-wrapper">
+                      <li>
+                        <h4 class="level-4 rectangle">SenProI</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">SenProII</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">SubPro</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">TechPro</h4>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <h3 class="level-3 rectangle">General Item</h3>
+                    <ol class="level-4-wrapper">
+                      <li>
+                        <h4 class="level-4 rectangle">AppProb</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">CalcuI</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">CalcuII</h4>
+                      </li>
+                      <li>
+                        <h4 class="level-4 rectangle">CalcuIII</h4>
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      let currentIndex = 0;
+      const rows = document.querySelectorAll("#emp-table tbody tr");
+      const rowsPerPage = 4;
+      const totalItems = rows.length;
+
+      function showRows() {
+        rows.forEach((row) => (row.style.display = "none"));
+
+        for (
+          let i = currentIndex;
+          i < currentIndex + rowsPerPage && i < rows.length;
+          i++
+        ) {
+          rows[i].style.display = "table-row";
+        }
+
+        document.getElementById("next-btn").style.display =
+          currentIndex + rowsPerPage >= rows.length ? "none" : "inline-block";
+
+        const a = currentIndex + 1;
+        const b = Math.min(currentIndex + rowsPerPage, totalItems);
+
+        document.getElementById(
+          "item-count"
+        ).textContent = `Showing ${a} to ${b} of ${totalItems} items`;
+      }
+
+      function showNextRows() {
+        if (currentIndex + rowsPerPage < rows.length) {
+          currentIndex += rowsPerPage;
+          showRows();
+        }
+      }
+
+      function showPreviousRows() {
+        if (currentIndex - rowsPerPage >= 0) {
+          currentIndex -= rowsPerPage;
+          showRows();
+        }
+      }
+      showRows();
+    </script>
+    <script src="test.js"></script>
+  </body>
+</html>

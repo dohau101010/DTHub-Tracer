@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Power Tools | DTHub-Tracer</title>
+    <script
+      nonce="undefined"
+      src="https://cdn.zingchart.com/zingchart.min.js"
+    ></script>
+    <link rel="stylesheet" href="require.css" />
+    <!-- Font Awesome Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.0.6/wordcloud2.min.js"></script>
+
+    <style>
+      .chart--container {
+        min-height: 500px;
+        width: 100%;
+        height: 100%;
+      }
+
+      .zc-ref {
+        display: none;
+      }
+
+      #myChart {
+        height: 100%;
+        width: 100%;
+      }
+
+      .zc-body {
+        background: #ffffff;
+      }
+      #wordcloud {
+        width: 600px;
+        height: 400px;
+        margin: 0 auto;
+      }
+
+      .info {
+        padding: 1rem 0 0;
+        min-height: 529px;
+        background: #fff;
+        box-sizing: border-box;
+      }
+
+      #myChart4 {
+        height: 90%;
+        width: 100%;
+      }
+
+      .zc-body {
+        background-color: #fff;
+      }
+      .zc-ref {
+        display: none;
+      }
+
+      #myChart5 {
+        position: relative;
+        bottom: 100px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="line"></div>
+    <header class="header">
+      <div class="logos">
+        <a href="#">TraceTool-PS</a>
+        <div class="search_box">
+          <input type="search" placeholder="Search Traceability" />
+          <i class="fa-solid fa-search"></i>
+        </div>
+      </div>
+      <div class="user-info">
+        <img class="acc" src="./img/user.png" alt="" />
+        <div id="username">
+          Badly! Unknown User Detected! Please login again!
+        </div>
+      </div>
+
+      <div class="header-icons">
+        <i class="fas fa-bell"></i>
+        <div class="account">
+          <h4 class="dthub">DTHub</h4>
+          <img class="key" src="./img/msn3-5.png" alt="" />
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <nav>
+        <ul>
+          <li>
+            <a href="#" class="logo">
+              <img src="./img/icon_global.png" />
+              <span class="nav-item1" style="color: black">Work Trace</span>
+            </a>
+          </li>
+          <li>
+            <a href="./main.html">
+              <i class="fas fa-solar-panel"></i>
+              <span class="nav-item">Item Panel</span>
+            </a>
+          </li>
+          <li>
+            <a href="./task.html">
+              <i class="fas fa-list-check"></i>
+              <span class="nav-item">Certification</span>
+            </a>
+          </li>
+          <li>
+            <a href="./report.html">
+              <i class="fas fa-users-rectangle"></i>
+              <span class="nav-item">Learning Portal</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" id="traceBoxLink">
+              <i class="fas fa-table-list"></i>
+              <span class="nav-item">Trace Box</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-user-tie"></i>
+              <span class="nav-item">About me</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <section class="main">
+        <section class="attendance">
+          <div class="attendance-list">
+            <h1 style="font-weight: 600">Sketch of Requirement Flow</h1>
+
+            <!-- Thêm các nút phía trên bảng -->
+            <div class="button-container">
+              <button class="neumorphism-btn pastel-btn" id="fetch-btn">
+                FETCH DETAIL
+              </button>
+              <button class="neumorphism-btn pastel-btn" id="overview-btn">
+                GET PACKAGE
+              </button>
+              <button class="neumorphism-btn pastel-btn" id="slave-btn">
+                GET CERT
+              </button>
+              <button class="neumorphism-btn pastel-btn" id="master-btn">
+                GET ORDER
+              </button>
+              <button class="neumorphism-btn pastel-btn" id="feed-btn">
+                FEEDBACK
+              </button>
+              <button class="neumorphism-btn pastel-btn" id="forum-btn">
+                FORUM
+              </button>
+            </div>
+
+            <div id="content">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Artifact</th>
+                    <th>Description</th>
+                    <th>Main Component</th>
+                    <th>Detail</th>
+                    <th>Method</th>
+                    <th>Work State</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>01</td>
+                    <td>Work Statment</td>
+                    <td>Get list of your expected work item to cart</td>
+                    <td>E-Print</td>
+                    <td>List of Item name</td>
+                    <td>Automation/Manual</td>
+                    <td><button id="state_1">Available</button></td>
+                  </tr>
+                  <tr class="active">
+                    <td>02</td>
+                    <td>Subject</td>
+                    <td>List of subject material file</td>
+                    <td>File</td>
+                    <td>Document/Presentation</td>
+                    <td>Manual</td>
+                    <td><button id="state_2">In Develop</button></td>
+                  </tr>
+                  <tr>
+                    <td>03</td>
+                    <td>Project</td>
+                    <td>List of mini project in practice</td>
+                    <td>File</td>
+                    <td>Document/Exe/Source</td>
+                    <td>Manual</td>
+                    <td><button id="state_3">In Develop</button></td>
+                  </tr>
+                  <tr>
+                    <td>04</td>
+                    <td>Container</td>
+                    <td>Contain your list order</td>
+                    <td>E-File</td>
+                    <td>Drag E-File and Drop here</td>
+                    <td>Manual</td>
+                    <td><button id="state_4">On Queue</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <div id="attendance_1">
+          <div class="gradient-bar">
+            <div class="color-1"></div>
+            <div class="color-2"></div>
+            <div class="color-3"></div>
+            <div class="color-4"></div>
+            <div class="color-5"></div>
+            <div class="color-6"></div>
+            <div class="color-7"></div>
+            <div class="color-8"></div>
+            <div class="color-9"></div>
+          </div>
+
+          <div id="myChart" class="chart--container">
+            <a class="zc-ref" href="https://www.zingchart.com/"
+              >Powered by ZingChart</a
+            >
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-storage.js"></script>
+
+    <script>
+      // Firebase configuration (replace with your own Firebase config)
+      const firebaseConfig = {
+        apiKey: "AIzaSyAtj1SB8ZlBhwChqRr7V_9hJQSqCW5zdjo",
+        authDomain: "dht-trace.firebaseapp.com",
+        projectId: "dht-trace",
+        storageBucket: "dht-trace.appspot.com",
+        messagingSenderId: "436573278890",
+        appId: "1:436573278890:web:1c73f0e0c5f7f8ee60b6d3",
+        measurementId: "G-3G5HGVCL6W",
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script>
+      ZC.LICENSE = [
+        "569d52cefae586f634c54f86dc99e6a9",
+        "b55b025e438fa8a98e32482b5f768ff5",
+      ];
+
+      let chartConfig = {
+        shapes: [
+          {
+            type: "zingchart.maps",
+            options: {
+              name: "world.countries",
+              panning: false,
+              zooming: false,
+              scrolling: false,
+              style: {
+                tooltip: {
+                  borderColor: "#000",
+                  borderWidth: "2px",
+                  fontSize: "18px",
+                },
+                borderColor: "#CCCCCC", // Viền xám cho các nước khác
+                borderWidth: "1px",
+                backgroundColor: "#E0E0E0", // Màu nền chung nhẹ
+                hoverState: { alpha: 0.3 },
+              },
+            },
+          },
+        ],
+      };
+
+      zingchart.loadModules("maps,maps-world-countries");
+      zingchart.render({
+        id: "myChart",
+        data: chartConfig,
+        height: "100%",
+        width: "100%",
+      });
+    </script>
+
+    <script src="./require.js"></script>
+  </body>
+</html>

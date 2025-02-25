@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Power Tools | DTHub-Tracer</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./login_style.css" />
+  </head>
+  <body>
+    <div class="content">
+      <div class="text">Login</div>
+      <form id="loginForm" action="#">
+        <div class="field">
+          <span class="bx bxs-user"></span>
+          <input type="text" placeholder="Username" id="username" required />
+        </div>
+        <div class="field">
+          <span class="bx bxs-lock-alt"></span>
+          <input
+            type="password"
+            placeholder="Password"
+            id="password"
+            required
+          />
+        </div>
+        <button type="submit">Login</button>
+        <h4>or Sign Up with social platforms</h4>
+        <div class="social_icon">
+          <i class="bx bxl-google" id="googleSignInBtn"></i>
+          <i class="bx bxl-facebook"></i>
+          <i class="bx bxl-discord-alt"></i>
+          <i class="bx bxl-twitter"></i>
+        </div>
+        <div class="foot">
+          <a>Already have an account?</a>
+          <a class="in" href="#">Sign In</a>
+        </div>
+      </form>
+      <div class="drak-light">
+        <i class="bx bx-moon moon"></i>
+        <i class="bx bx-sun sun"></i>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+
+    <script>
+      // Firebase configuration (replace with your own Firebase config)
+      const firebaseConfig = {
+        apiKey: "AIzaSyAtj1SB8ZlBhwChqRr7V_9hJQSqCW5zdjo",
+        authDomain: "dht-trace.firebaseapp.com",
+        projectId: "dht-trace",
+        storageBucket: "dht-trace.appspot.com",
+        messagingSenderId: "436573278890",
+        appId: "1:436573278890:web:1c73f0e0c5f7f8ee60b6d3",
+        measurementId: "G-3G5HGVCL6W",
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="./login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,645 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  /* outline: none;
+  border: none; */
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: rgb(226, 226, 226);
+}
+nav {
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 65px;
+  /* width: 280px; */
+  background: #fff;
+  overflow: hidden;
+  transition: 0.5s;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #b6a9a9, -5px -5px 10px #ffffff;
+}
+ul {
+  position: relative;
+  right: 13px;
+}
+nav:hover {
+  width: 280px;
+  transition: 1s;
+}
+.logo {
+  text-align: center;
+  display: flex;
+  margin: 10px 0 0 10px;
+  padding-bottom: 3rem;
+}
+
+.logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.logo span {
+  font-weight: bold;
+  padding-left: 15px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+a {
+  position: relative;
+  width: 280px;
+  font-size: 14px;
+  color: rgb(85, 83, 83);
+  display: table;
+  padding: 10px;
+}
+nav .fas {
+  position: relative;
+  width: 80px;
+  height: 50px;
+  top: 20px;
+  right: 5px;
+  font-size: 20px;
+  text-align: center;
+  color: #000;
+}
+.nav-item {
+  position: relative;
+  top: 18px;
+  right: 10px;
+  margin-left: 10px;
+  color: #000;
+  font-size: medium;
+}
+.nav-item1 {
+  position: relative;
+  top: 10px;
+  right: 10px;
+  margin-left: 10px;
+  color: #000;
+  font-size: medium;
+}
+a:hover {
+  background: #eee;
+}
+a:hover i {
+  color: #34af6d;
+  transition: 0.5s;
+}
+.logout {
+  position: absolute;
+  bottom: 0;
+}
+
+.container {
+  display: flex;
+  margin-top: 10px;
+}
+
+/* MAin Section */
+.main {
+  position: relative;
+  bottom: 20px;
+  padding: 20px;
+  width: 100%;
+}
+.main-top {
+  display: flex;
+  width: 100%;
+}
+.main-top i {
+  position: absolute;
+  right: 0;
+  margin: 10px 30px;
+  color: rgb(110, 109, 109);
+  cursor: pointer;
+}
+.main .users {
+  display: flex;
+  width: 100%;
+}
+.users .card {
+  width: 25%;
+  margin: 10px;
+  background: #fff;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 5px 5px 10px #827d7d, -5px -5px 10px #dfdcdc;
+}
+.users .card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.users .card h4 {
+  text-transform: uppercase;
+}
+.users .card p {
+  font-size: 12px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+.users table {
+  margin: auto;
+}
+.users .per span {
+  padding: 5px;
+  border-radius: 10px;
+  background: rgb(223, 223, 223);
+}
+.users td {
+  font-size: 14px;
+  padding-right: 15px;
+}
+
+.users .card button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 7px;
+  cursor: pointer;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid #507687;
+}
+.users .card button:hover {
+  background: #227b94;
+  color: #fff;
+  transition: 0.5s;
+}
+
+/*Attendance List serction  */
+.attendance {
+  margin-top: 20px;
+  text-transform: capitalize;
+  width: 100%;
+}
+
+.attendance-list,
+#attendance_1 {
+  position: relative;
+  padding-top: 6px; /* Optional: adds space for the gradient bar */
+  width: 100%;
+  padding: 10px;
+  margin-top: 0.1px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #827d7d, -5px -5px 10px #dfdcdc;
+}
+.gradient-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  display: flex;
+}
+
+.gradient-bar div {
+  height: 100%;
+}
+
+.color-1 {
+  background-color: #8b1e3f;
+  flex: 1.2;
+  border-radius: 5px 0px 0 0; /* Bo tròn ở cạnh trên */
+} /* Đỏ đậm */
+.color-2 {
+  background-color: #e02f2f;
+  flex: 0.8;
+} /* Đỏ tươi */
+.color-3 {
+  background-color: #a936b8;
+  flex: 1.5;
+} /* Tím đậm */
+.color-4 {
+  background-color: #3e518d;
+  flex: 1;
+} /* Xanh dương đậm */
+.color-5 {
+  background-color: #4f64b7;
+  flex: 1.3;
+} /* Xanh dương trung bình */
+.color-6 {
+  background-color: #58a2c6;
+  flex: 0.7;
+} /* Xanh dương nhạt */
+.color-7 {
+  background-color: #0a9f91;
+  flex: 1.1;
+} /* Xanh ngọc */
+.color-8 {
+  background-color: #79c36b;
+  flex: 1.6;
+} /* Xanh lá */
+.color-9 {
+  background-color: #a8cc5c;
+  flex: 0.9;
+  border-radius: 0px 5px 0 0; /* Bo tròn ở cạnh trên */
+} /* Xanh lá nhạt */
+
+.ig {
+  margin-top: 20px;
+}
+#attendance_1 {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+/* #attendance_1 img {
+  width: 60%;
+} */
+.table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 15px;
+  min-width: 100%;
+  overflow: hidden;
+  border-radius: 5px 5px 0 0;
+}
+table thead tr {
+  color: #ffffff;
+  background: #006a67;
+  text-align: left;
+  font-weight: bold;
+}
+
+/*  */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #999999; /* Đường kẻ trên dày */
+  border-bottom: 1px solid #999999; /* Đường kẻ dưới dày */
+}
+#state_1 {
+  background-color: #3984e6;
+  border: 2px solid #3984e6;
+  box-shadow: 5px 5px 10px #b6a9a9, -5px -5px 10px #ffffff;
+  width: 90%;
+}
+#state_2,
+#state_3 {
+  background-color: #db8835;
+  border: 2px solid #db8835;
+  box-shadow: 5px 5px 10px #b6a9a9, -5px -5px 10px #ffffff;
+  width: 90%;
+}
+#state_4 {
+  background-color: #42bd3b;
+  border: 2px solid #42bd3b;
+  box-shadow: 5px 5px 10px #b6a9a9, -5px -5px 10px #ffffff;
+  width: 90%;
+}
+.table button {
+  padding: 6px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: transparent;
+}
+.table button:hover {
+  background: #4ad489;
+  color: #fff;
+  transition: 0.5rem;
+}
+tbody :hover {
+  background-color: #f1f1f1;
+}
+
+/* ....................................................... */
+.line {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 8px;
+  content: "";
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  background-image: url(./img/line.svg);
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 20px;
+  background: #fff;
+  /* border: 1px solid black; */
+  box-shadow: #ddd;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #b6a9a9, -5px -5px 10px #ffffff;
+  width: 100vw;
+}
+.logos {
+  display: flex;
+  align-items: center;
+}
+.logos img {
+  margin-top: 5px;
+  height: 50px;
+}
+.logos a {
+  color: #000;
+  font-size: 24px;
+  font-weight: 1000;
+  text-transform: capitalize;
+  background-image: linear-gradient(
+    to right,
+    #00f24d,
+    #b17307,
+    #0354a5,
+    #46e172
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  background-size: 300%;
+  background-position: -100%;
+
+  animation: animatedText 5s infinite alternate-reverse;
+}
+@keyframes animatedText {
+  to {
+    background-position: 100%;
+  }
+}
+.search_box {
+  width: 300px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border: solid #302d33 2px;
+  border-radius: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: width 0.3s ease; /* Hiệu ứng giãn ra */
+  transform-origin: center;
+}
+
+.search_box:hover {
+  width: 350px; /* Đặt chiều rộng lớn hơn khi đưa chuột vào */
+}
+
+.search_box input {
+  padding: 7px;
+  width: 250px;
+  background: none;
+  border: none;
+  outline: none;
+  transition: width 0.3s ease; /* Hiệu ứng giãn chiều rộng */
+}
+
+.search_box input:focus {
+  width: 350px; /* Giữ chiều rộng lớn hơn khi ô nhập liệu được chọn */
+}
+
+.search_box:hover input {
+  width: 350px; /* Đảm bảo chiều rộng của ô input không thay đổi khi không focus */
+}
+
+.search_box i {
+  padding: 0.66rem;
+  cursor: pointer;
+  color: #000000;
+  background: none;
+  border: none;
+  font-size: 16px;
+}
+.header-icons {
+  display: flex;
+  align-items: center;
+}
+.header-icons i {
+  margin-right: 2rem;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.header-icons .account {
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-icons .account .key {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+#username {
+  font-size: 17px;
+  color: #31511e;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  margin-right: 30px;
+  margin-top: 4px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.user-info .acc {
+  width: 27px; /* Điều chỉnh kích thước ảnh tùy ý */
+  height: 27px;
+  margin-right: 20px; /* Khoảng cách giữa ảnh và tên */
+  margin-top: 5px;
+}
+/* ....................... */
+/* Container cho các nút */
+/* Định dạng cho container chứa nút */
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Căn phải */
+  margin-bottom: 20px;
+  margin-right: 20px; /* Khoảng cách từ nút đến cạnh phải */
+}
+
+/* Định dạng cho các nút */
+.neumorphism-btn {
+  width: 150px;
+  height: 40px;
+  margin: 0 15px; /* Khoảng cách giữa các nút */
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  color: #282828;
+  cursor: pointer;
+  box-shadow: 10px 10px 20px #b0a8a8, -10px -10px 20px #ffffff;
+  transition: all 0.3s ease; /* Hiệu ứng chuyển đổi khi nhấn */
+  font-weight: 550;
+}
+
+/* Màu pastel cho từng nút */
+#overview-btn {
+  background-color: #4f75ff; /* Màu pastel xanh */
+}
+
+#slave-btn {
+  background-color: #ff885b; /* Màu pastel cam */
+}
+
+#master-btn {
+  background-color: #41b3a2; /* Màu pastel xanh lá */
+}
+
+#fetch-btn {
+  background-color: #86ab89; /* Màu pastel xanh lá */
+}
+
+#feed-btn {
+  background-color: #d1b4cd; /* Màu pastel tím */
+}
+
+#forum-btn {
+  background-color: #d4de9d; /* Màu pastel vàng */
+}
+
+/* Hiệu ứng hover */
+.neumorphism-btn:hover {
+  background: #000000; /* Đổi màu nền khi hover */
+  color: #000b58; /* Đổi màu chữ nếu cần */
+}
+
+/* Đổi màu cụ thể cho từng nút khi hover */
+#overview-btn:hover {
+  background-color: #fff4b7; /* Màu khi hover nút overview */
+}
+
+#slave-btn:hover {
+  background-color: #fff4b7; /* Màu khi hover nút overview */
+}
+
+#master-btn:hover {
+  background-color: #fff4b7; /* Màu khi hover nút overview */
+}
+
+#fetch-btn:hover {
+  background-color: #fff4b7; /* Màu khi hover nút overview */
+}
+
+#feed-btn:hover {
+  background-color: #fff4b7; /* Màu khi hover nút overview */
+}
+
+#forum-btn:hover {
+  background-color: #fff4b7; /* Màu khi hover nút overview */
+}
+
+h1 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* ........................................................................................................ */
+figure {
+  margin-top: 30px;
+}
+px .tree,
+.tree ul,
+.tree li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.tree {
+  margin: 0 0 1em;
+  text-align: center;
+}
+.tree,
+.tree ul {
+  display: table;
+}
+.tree ul {
+  width: 100%;
+}
+.tree li {
+  display: table-cell;
+  padding: 0.5em 0;
+  vertical-align: top;
+}
+/* _________ */
+.tree li:before {
+  outline: solid 1px #666;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.tree li:first-child:before {
+  left: 50%;
+}
+.tree li:last-child:before {
+  right: 50%;
+}
+
+.tree code,
+.tree span {
+  border: solid 0.1em #666;
+  border-radius: 0.2em;
+  display: inline-block;
+  margin: 0 0.2em 0.5em;
+  padding: 0.2em 0.5em;
+  position: relative;
+}
+/* If the tree represents DOM structure */
+.tree code {
+  font-family: monaco, Consolas, "Lucida Console", monospace;
+}
+
+/* | */
+.tree ul:before,
+.tree code:before,
+.tree span:before {
+  outline: solid 1px #666;
+  content: "";
+  height: 0.5em;
+  left: 50%;
+  position: absolute;
+}
+.tree ul:before {
+  top: -0.5em;
+}
+.tree code:before,
+.tree span:before {
+  top: -0.55em;
+}
+
+/* The root node doesn't connect upwards */
+.tree > li {
+  margin-top: 0;
+}
+.tree > li:before,
+.tree > li:after,
+.tree > li > code:before,
+.tree > li > span:before {
+  outline: none;
+}

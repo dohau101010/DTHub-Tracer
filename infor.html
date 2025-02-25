@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Power Tools | DTHub-Tracer</title>
+    <link rel="stylesheet" href="infor.css" />
+    <!-- Font Awesome Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+    />
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <style>
+      #myChart5 {
+        margin-left: 3px;
+        margin-top: 7px;
+        margin-bottom: 5px;
+      }
+      .chart--container {
+        height: 100%;
+        width: 100%;
+      }
+
+      .zc-body {
+        margin: 10px;
+        padding: 10px;
+        background: #fbfbfb;
+      }
+
+      .zc-info {
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .zc-info ol {
+        margin: 0 0 22px;
+        padding: 0 0 0 1rem;
+        font-size: 14px;
+      }
+      .zc-info p {
+        color: #dc1257;
+      }
+
+      .zc-controls {
+        padding: 5px 0;
+        display: none;
+      }
+
+      .zc-controls input {
+        height: 40px;
+        border: 1px solid #ebebeb;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 1rem;
+        padding: 0 10px;
+      }
+      .zc-controls input:focus {
+        font-size: 1rem;
+      }
+
+      .zc-controls button {
+        color: #fff;
+        background: #073c4e;
+        border: 1px solid #ebebeb;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.8125rem;
+        padding: 0 10px;
+        height: 40px;
+      }
+      .zc-controls button[disabled] {
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="line"></div>
+    <header class="header">
+      <div class="logos">
+        <a href="#">TraceTool-PS</a>
+        <div class="search_box">
+          <input type="search" placeholder="Search Traceability" />
+          <i class="fa-solid fa-search"></i>
+        </div>
+      </div>
+      <div class="user-info">
+        <img class="acc" src="./img/user.png" alt="" />
+        <div id="username">
+          Badly! Unknown User Detected! Please login again!
+        </div>
+      </div>
+
+      <div class="header-icons">
+        <i class="fas fa-bell"></i>
+        <div class="account">
+          <h4 class="dthub">DTHub</h4>
+          <img class="key" src="./img/msn3-5.png" alt="" />
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <nav>
+        <ul>
+          <li>
+            <a href="#" class="logo">
+              <img src="./img/icon_global.png" />
+              <span class="nav-item1" style="color: black">Work Trace</span>
+            </a>
+          </li>
+          <li>
+            <a href="./main.html">
+              <i class="fas fa-solar-panel"></i>
+              <span class="nav-item">Item Panel</span>
+            </a>
+          </li>
+          <li>
+            <a href="./task.html">
+              <i class="fas fa-list-check"></i>
+              <span class="nav-item">Certification</span>
+            </a>
+          </li>
+          <li>
+            <a href="./report.html">
+              <i class="fas fa-users-rectangle"></i>
+              <span class="nav-item">Learning Portal</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" id="traceBoxLink">
+              <i class="fas fa-table-list"></i>
+              <span class="nav-item">Trace Box</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-user-tie"></i>
+              <span class="nav-item">About me</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="main">
+        <div class="main-top">
+          <h1>Your task assignment board here!</h1>
+          <i class="fas fa-user-cog"></i>
+        </div>
+
+        <section class="attendance">
+          <div class="attendance-list">
+            <!-- <h1>Work List</h1> -->
+            <div class="gradient-bar">
+              <div class="color-1"></div>
+              <div class="color-2"></div>
+              <div class="color-3"></div>
+              <div class="color-4"></div>
+              <div class="color-5"></div>
+              <div class="color-6"></div>
+              <div class="color-7"></div>
+              <div class="color-8"></div>
+              <div class="color-9"></div>
+            </div>
+            <div class="main-container">
+              <div id="myChart" class="chart--container"></div>
+            </div>
+            <div class="chat-box">
+              <div class="chat-messages" id="chat-messages">
+                <div class="message received">Hello! How can I assist you?</div>
+              </div>
+              <div class="chat-input">
+                <input
+                  type="text"
+                  id="chat-input"
+                  placeholder="Type a message..."
+                  onkeypress="if(event.key === 'Enter') sendMessage()"
+                />
+                <button type="button" onclick="sendMessage()">Send</button>
+                <div id="spinner" class="spinner" style="display: none"></div>
+              </div>
+            </div>
+            <div id="support"></div>
+          </div>
+
+          <div class="attendance-listxx">
+            <div class="zc-controls">
+              <input
+                type="text"
+                id="renderInput"
+                placeholder="Your full name here"
+                value="world"
+              />
+              <button id="renderBtn">Render Tree</button>
+            </div>
+
+            <div id="myChart5"></div>
+          </div>
+
+          <!-- <div class="attendance-listx">
+          
+
+            <div class="work-item-container">
+              <div class="work-item-card cl1">
+                <i class="fas fa-money-bill-alt"></i>
+                <h3>PS01</h3>
+                <p>Remove Background</p>
+                <small>Snaptik</small>
+              </div>
+
+              <div class="work-item-card cl2">
+                <i class="fas fa-credit-card"></i>
+                <h3>PS02</h3>
+                <p>Chat GPT</p>
+                <small>Open AI</small>
+              </div>
+
+              <div class="work-item-card cl3">
+                <i class="fas fa-handshake"></i>
+                <h3>PS03</h3>
+                <p>Enhancer</p>
+                <small>SnapEdit</small>
+              </div>
+
+              <div class="work-item-card cl2">
+                <i class="fas fa-chart-pie"></i>
+                <h3>PS04</h3>
+                <p>Canva</p>
+                <small>Presenter</small>
+              </div>
+
+              <div class="work-item-card cl1">
+                <i class="fas fa-users"></i>
+                <h3>PS05</h3>
+                <p>Flaticon</p>
+                <small>Icon</small>
+              </div>
+
+              <div class="work-item-card cl1">
+                <i class="fas fa-user-secret"></i>
+                <h3>PS06</h3>
+                <p>GDB Online</p>
+                <small>Online Code Panel</small>
+              </div>
+
+              <div class="work-item-card cl2">
+                <i class="fas fa-store"></i>
+                <h3>PS07</h3>
+                <p>Wokwi</p>
+                <small>IoT Simulation</small>
+              </div>
+
+              <div class="work-item-card cl3">
+                <i class="fas fa-shopping-cart"></i>
+                <h3>PS08</h3>
+                <p>Kaggle</p>
+                <small>Online Notebook</small>
+              </div>
+              <div class="work-item-card cl2">
+                <i class="fas fa-shopping-cart"></i>
+                <h3>PS09</h3>
+                <p>Google Colab</p>
+                <small>Online Notebook</small>
+              </div>
+              <div class="work-item-card cl1">
+                <i class="fas fa-shopping-cart"></i>
+                <h3>PS10</h3>
+                <p>IndiaBix</p>
+                <small>C Language Question</small>
+              </div>
+            </div>
+          </div> -->
+        </section>
+      </section>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+
+    <script>
+      // Firebase configuration (replace with your own Firebase config)
+      const firebaseConfig = {
+        apiKey: "AIzaSyAtj1SB8ZlBhwChqRr7V_9hJQSqCW5zdjo",
+        authDomain: "dht-trace.firebaseapp.com",
+        projectId: "dht-trace",
+        storageBucket: "dht-trace.appspot.com",
+        messagingSenderId: "436573278890",
+        appId: "1:436573278890:web:1c73f0e0c5f7f8ee60b6d3",
+        measurementId: "G-3G5HGVCL6W",
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script>
+      let chartConfig = {
+        globals: {
+          fontFamily: "Lucida Sans Unicode",
+        },
+        layout: "2x2",
+        graphset: [
+          {
+            type: "scorecard",
+            border: "1px solid #ccc",
+            options: {
+              value: {
+                text: "1,450",
+                color: "#a00",
+              },
+              icon: {
+                backgroundImage:
+                  "https://app.zingsoft.com/api/file/73CNKMOJ/clock.png",
+                backgroundScale: 0.75,
+              },
+              title: {
+                text: "Followers",
+                color: "#a00",
+              },
+            },
+            plotarea: {
+              margin: "10px",
+            },
+          },
+          {
+            type: "scorecard",
+            border: "1px solid #ccc",
+            borderTop: "1px solid #ccc",
+            borderBottom: "1px solid #ccc",
+            borderRight: "1px solid #ccc",
+            options: {
+              value: {
+                text: "5,042",
+                color: "#0a0",
+              },
+              icon: {
+                backgroundColor: "#8eba31 #8dcd41",
+                backgroundImage:
+                  "https://app.zingsoft.com/api/file/73CNKMOJ/layers.png",
+                backgroundScale: 0.75,
+                borderColor: "#6fb023",
+              },
+              title: {
+                text: "Profile Views",
+                color: "#0a0",
+              },
+            },
+            plotarea: {
+              margin: "10px",
+            },
+          },
+          {
+            type: "scorecard",
+            borderRight: "1px solid #ccc",
+            borderBottom: "1px solid #ccc",
+            borderLeft: "1px solid #ccc",
+            options: {
+              value: {
+                text: "2,074",
+                color: "#a0a",
+              },
+              bars: [
+                {
+                  text: "FaceBook Views",
+                  value: 1574,
+                },
+                {
+                  text: "Pinterest Views",
+                  value: 500,
+                },
+              ],
+              icon: {
+                backgroundColor: "#ffc90e #ffa100",
+                backgroundImage:
+                  "https://app.zingsoft.com/api/file/73CNKMOJ/calendar.png",
+                backgroundScale: 0.75,
+                borderColor: "#ff7200",
+              },
+              title: {
+                text: "Opportunity Views",
+              },
+            },
+            plotarea: {
+              margin: "10px",
+            },
+          },
+          {
+            type: "scorecard",
+            borderRight: "1px solid #ccc",
+            borderBottom: "1px solid #ccc",
+            options: {
+              value: {
+                text: "632",
+              },
+              bars: [
+                {
+                  text: "FaceBook Shares",
+                  value: 432,
+                },
+                {
+                  text: "Pinterest Shares",
+                  value: 130,
+                },
+                {
+                  text: "Other Shares",
+                  value: 70,
+                },
+              ],
+              icon: {
+                backgroundColor: "#c90eff #a100ff",
+                backgroundImage:
+                  "https://app.zingsoft.com/api/file/73CNKMOJ/email.png",
+                backgroundScale: 0.75,
+                borderColor: "#7200ff",
+              },
+              title: {
+                text: "Shares",
+              },
+            },
+            plotarea: {
+              margin: "10px",
+            },
+          },
+        ],
+      };
+
+      zingchart.render({
+        id: "myChart",
+        data: chartConfig,
+        height: "160px",
+        width: "600px",
+        modules: "scorecard",
+      });
+    </script>
+    <script>
+      // INIT
+      // -----------------------------
+      // Define Module Location
+      zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+
+      // DEFINE CHART
+      // -----------------------------
+      // Main chart render location
+      let chartId = "myChart5";
+
+      // DOM ELEMENTS
+      // -----------------------------
+      let renderBtn = document.querySelector("#renderBtn");
+      let renderInput = document.querySelector("#renderInput");
+
+      // RENDER BUTTON EVENTS
+      // -----------------------------
+      renderBtn.addEventListener("click", renderChart);
+
+      // HELPER FNS
+      // -----------------------------
+
+      // Render Chart
+      function renderChart() {
+        // Disable render button
+        renderBtn.setAttribute("disabled", "disabled");
+
+        // Define constants
+        const COLORS = [
+          "#99ccff #336699",
+          "#6CB359 #0F4800",
+          "#9A5E9A #430443",
+          "#FFA153 #AC4E00",
+          "#FF653D #A62300",
+          "#57B8C6 #095B67",
+          "#FFE66D #AF930B",
+          "#EF668F #9D0A36",
+        ];
+        const NAME = renderInput.value.trim() || "Santa Claus";
+        let width = "100%";
+        let height = 420;
+        let colorSequence = 0;
+        let sequence = 0;
+        let tick = null;
+
+        // Define data
+        let chartConfig = {
+          type: "tree",
+
+          options: {
+            aspect: "graph",
+            attractionConstant: 0.1,
+            minSize: "16px",
+            maxSize: "16px",
+            minLinkWidth: "1px",
+            maxLinkWidth: "1px",
+            repulsionConstant: 400,
+            repulsionDistanceFactor: 5,
+            springLength: "35px",
+            textAttr: "id",
+            weightedLinks: 1,
+            weightedNodes: 1,
+            link: {
+              lineColor: "#000000",
+            },
+            node: {
+              backgroundColor: "none",
+              backgroundPosition: "45% 45%",
+              backgroundRepeat: "no-repeat",
+              borderWidth: 0,
+              fillOffsetX: "-5px",
+              fillOffsetY: "-5px",
+              fillType: "radial",
+              label: {
+                visible: false,
+              },
+              tooltip: {
+                visible: false,
+              },
+            },
+          },
+          plotarea: {
+            margin: "60px 40px 40px 60px",
+          },
+          images: [
+            {
+              src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/374756/xmas0.png",
+              visible: false,
+            },
+            {
+              src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/374756/xmas1.png",
+              visible: false,
+            },
+            {
+              src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/374756/xmas2.png",
+              visible: false,
+            },
+            {
+              src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/374756/xmas3.png",
+              visible: false,
+            },
+            {
+              src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/374756/xmas4.png",
+              visible: false,
+            },
+            {
+              src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/374756/xmas5.png",
+              visible: false,
+            },
+            {
+              src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/374756/xmas6.png",
+              visible: false,
+            },
+            {
+              src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/374756/xmas7.png",
+              visible: false,
+            },
+            {
+              src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/374756/xmas8.png",
+              visible: false,
+            },
+            {
+              src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/374756/xmas9.png",
+              visible: false,
+            },
+          ],
+          shapes: [],
+          source: {
+            fontSize: "12px",
+            margin: "auto 25px 25px 25px",
+            text: "Welcome back to Task board!",
+          },
+          series: [],
+        };
+
+        // Build layout
+        let rows = Math.round(height / 20);
+        let cols = Math.round(width / 20);
+        let iCharCode;
+        for (let row = 0; row < rows; row++) {
+          iCharCode = NAME.charCodeAt(row % NAME.length);
+          chartConfig.shapes.push(
+            {
+              type: "star5",
+              flat: true,
+              backgroundColor: COLORS[iCharCode % COLORS.length],
+              size: 4 + (iCharCode % 4),
+              x: 10,
+              y: 10 + row * 20,
+            },
+            {
+              type: "star5",
+              flat: true,
+              backgroundColor: COLORS[iCharCode % COLORS.length],
+              size: 4 + (iCharCode % 4),
+              x: width - 10,
+              y: 10 + row * 20,
+            }
+          );
+        }
+        for (let col = 1; col < cols - 1; col++) {
+          iCharCode = NAME.charCodeAt(col % NAME.length);
+          chartConfig.shapes.push(
+            {
+              type: "star5",
+              flat: true,
+              backgroundColor: COLORS[iCharCode % COLORS.length],
+              size: 4 + (iCharCode % 4),
+              x: 10 + col * 20,
+              y: 10,
+            },
+            {
+              type: "star5",
+              flat: true,
+              backgroundColor: COLORS[iCharCode % COLORS.length],
+              size: 4 + (iCharCode % 4),
+              x: 10 + col * 20,
+              y: height - 10,
+            }
+          );
+        }
+
+        // Render the chart
+        zingchart.render({
+          id: chartId,
+          width,
+          height,
+          output: "canvas",
+          data: chartConfig,
+          events: {
+            load: function () {
+              tick = window.setInterval(fnStep, 150);
+            },
+          },
+        });
+
+        function fnStep() {
+          let i, sSource, sTarget, aPairs, oLink;
+          let iCharCode = NAME.charCodeAt(
+            (sequence + colorSequence) % NAME.length
+          );
+          let iColorCharCode = NAME.charCodeAt(colorSequence % NAME.length);
+          // get data from graph
+          let aData = zingchart.exec(chartId, "tree.getdata") || [];
+          // count links for each node
+          let oNodesLinks = {},
+            aNodesIds = [],
+            aLinksIds = [];
+          for (i = 0; i < aData.length; i++) {
+            if (aData[i].type === "link") {
+              oNodesLinks[aData[i].source] =
+                ++oNodesLinks[aData[i].source] || 1;
+              oNodesLinks[aData[i].target] =
+                ++oNodesLinks[aData[i].target] || 1;
+              aLinksIds.push(aData[i].source + "-" + aData[i].target);
+              aLinksIds.push(aData[i].target + "-" + aData[i].source);
+            } else if (aData[i].type === "node") {
+              aNodesIds.push(aData[i].id);
+            }
+          }
+
+          // remove all nodes with no links
+          if (aNodesIds.length > 2) {
+            for (i = 0; i < aNodesIds.length; i++) {
+              if (!oNodesLinks[aNodesIds[i]]) {
+                zingchart.exec(chartId, "tree.removenode", {
+                  id: aNodesIds[i],
+                });
+              }
+            }
+          }
+
+          // from time to time remove oldest leaves
+          if (sequence % 5 === 0 && aNodesIds.length > 5) {
+            for (i = 0; i < aNodesIds.length; i++) {
+              if (oNodesLinks[aNodesIds[i]] === 1) {
+                zingchart.exec(chartId, "tree.removenode", {
+                  id: aNodesIds[i],
+                });
+                sequence++;
+                return;
+              }
+            }
+          }
+
+          // from time to time remove nodes with too many links
+          if (sequence % 13 === 0 && aNodesIds.length > 5) {
+            for (i = 0; i < aNodesIds.length; i++) {
+              if (oNodesLinks[aNodesIds[i]] > 3) {
+                zingchart.exec(chartId, "tree.removenode", {
+                  id: aNodesIds[i],
+                });
+                sequence++;
+                return;
+              }
+            }
+          }
+
+          // from time to time just create a link between existing nodes
+          if (sequence % 7 === 0 && aNodesIds.length > 3) {
+            aPairs = [];
+            for (i = 0; i < aNodesIds.length; i++) {
+              if (oNodesLinks[aNodesIds[i]] === 1) {
+                aPairs.push(aNodesIds[i]);
+                if (aPairs.length === 2) {
+                  oLink = {
+                    source: aPairs[0],
+                    target: aPairs[1],
+                    value: 1 + (iCharCode % 2),
+                  };
+                  zingchart.exec(chartId, "tree.addlink", {
+                    data: oLink,
+                    update: true,
+                  });
+                  sequence++;
+                  return;
+                }
+              }
+            }
+          }
+
+          // otherwise, create a new node
+          sTarget = "n" + sequence;
+          oNode = {
+            id: sTarget,
+            text: sTarget,
+            value: 1,
+            style: {
+              backgroundImage:
+                "https://s3-us-west-2.amazonaws.com/s.cdpn.io/374756/xmas" +
+                (sequence % 10) +
+                ".png",
+              backgroundColor: COLORS[iColorCharCode % COLORS.length],
+            },
+          };
+          colorSequence++;
+          zingchart.exec(chartId, "tree.addnode", {
+            data: oNode,
+            update: aNodesIds.length === 0,
+          });
+          if (aNodesIds.length > 0) {
+            sSource = aNodesIds[iCharCode % aNodesIds.length];
+            oLink = {
+              source: sSource,
+              target: sTarget,
+              value: 1 + (iCharCode % 2),
+            };
+            zingchart.exec(chartId, "tree.addlink", {
+              data: oLink,
+              update: aNodesIds.length > 0,
+            });
+          }
+          sequence++;
+          if (sequence > 99) {
+            window.clearInterval(tick);
+            renderBtn.removeAttribute("disabled");
+          }
+        }
+      }
+
+      window.addEventListener("load", function () {
+        renderChart();
+      });
+    </script>
+    <script src="infor.js"></script>
+  </body>
+</html>

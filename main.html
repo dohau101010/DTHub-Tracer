@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Power Tools | DTHub-Tracer</title>
+    <link rel="stylesheet" href="main.css" />
+    <!-- Font Awesome Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+    />
+  </head>
+
+  <body>
+    <div class="line"></div>
+    <header class="header">
+      <div class="logos">
+        <a href="#">TraceTool-PS</a>
+        <div class="search_box">
+          <input type="search" placeholder="Search Traceability" />
+          <i class="fa-solid fa-search"></i>
+        </div>
+      </div>
+      <div class="user-info">
+        <img class="acc" src="./img/user.png" alt="" />
+        <div id="username">
+          Badly! Unknown User Detected! Please login again!
+        </div>
+      </div>
+
+      <div class="header-icons">
+        <i class="fas fa-bell"></i>
+        <div class="account">
+          <h4 class="dthub">DTHub</h4>
+          <img class="key" src="./img/msn3-5.png" alt="" />
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <nav>
+        <ul>
+          <li>
+            <a href="#" class="logo">
+              <img src="./img/icon_global.png" />
+              <span class="nav-item1" style="color: black">Work Trace</span>
+            </a>
+          </li>
+          <li>
+            <a href="./main.html">
+              <i class="fas fa-solar-panel"></i>
+              <span class="nav-item">Item Panel</span>
+            </a>
+          </li>
+          <li>
+            <a href="./task.html">
+              <i class="fas fa-list-check"></i>
+              <span class="nav-item">Certification</span>
+            </a>
+          </li>
+          <li>
+            <a href="./report.html">
+              <i class="fas fa-users-rectangle"></i>
+              <span class="nav-item">Learning Portal</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" id="traceBoxLink">
+              <i class="fas fa-table-list"></i>
+              <span class="nav-item">Trace Box</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-user-tie"></i>
+              <span class="nav-item">About me</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="main">
+        <div class="main-top">
+          <h1 style="margin-left: 14px; font-weight: 500">
+            Explore your knowledge!
+          </h1>
+          <i class="fas fa-user-cog"></i>
+        </div>
+        <div class="users">
+          <div class="card">
+            <img src="./img/dimensions.png" />
+            <h4>USER GUIDELINE</h4>
+            <p>AVAILABLE</p>
+            <div class="per">
+              <table>
+                <tr>
+                  <td><span class="sp">99%</span></td>
+                  <td><span class="sp1">90%</span></td>
+                </tr>
+                <tr>
+                  <td>ExpR</td>
+                  <td>CurR</td>
+                </tr>
+              </table>
+            </div>
+            <button id="explore-btn">Explore</button>
+          </div>
+          <div class="card">
+            <img src="./img/dimensions.png" />
+            <h4>OVERVIEW BOARD</h4>
+            <p>AVAILABLE</p>
+            <div class="per">
+              <table>
+                <tr>
+                  <td><span class="sp">99%</span></td>
+                  <td><span class="sp1">95%</span></td>
+                </tr>
+                <tr>
+                  <td>ExpR</td>
+                  <td>CurR</td>
+                </tr>
+              </table>
+            </div>
+            <button id="explore-testing">Implement</button>
+          </div>
+          <div class="card">
+            <img src="./img/dimensions.png" />
+            <h4>ORDER STATEMENT</h4>
+            <p>AVAILABLE</p>
+            <div class="per">
+              <table>
+                <tr>
+                  <td><span class="sp">99%</span></td>
+                  <td><span class="sp1">88%</span></td>
+                </tr>
+                <tr>
+                  <td>ExpR</td>
+                  <td>CurR</td>
+                </tr>
+              </table>
+            </div>
+            <button id="explore-design">Explore</button>
+          </div>
+          <div class="card">
+            <img src="./img/dimensions.png" />
+            <h4>NOTE BOARD</h4>
+            <p>AVAILABLE</p>
+            <div class="per">
+              <table>
+                <tr>
+                  <td><span class="sp">99%</span></td>
+                  <td><span class="sp1">50%</span></td>
+                </tr>
+                <tr>
+                  <td>ExpR</td>
+                  <td>CurR</td>
+                </tr>
+              </table>
+            </div>
+            <button id="explore-pay">Implement</button>
+          </div>
+        </div>
+
+        <section class="attendance">
+          <div class="attendance-list">
+            <h1>Board Management</h1>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Component</th>
+                  <th>Description</th>
+                  <th>Author</th>
+                  <th>Valid date</th>
+                  <th>Version</th>
+                  <th>Package State</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>01</td>
+                  <td>User Guideline</td>
+                  <td>Introduce the process of work</td>
+                  <td>Do Trung Hau</td>
+                  <td>20/09/2024</td>
+                  <td>V10.0.0</td>
+                  <td><button id="state_1">Accessible</button></td>
+                </tr>
+                <tr class="active">
+                  <td>02</td>
+                  <td>Overview Board</td>
+                  <td>List of available item</td>
+                  <td>Do Trung Hau</td>
+                  <td>25/10/2024</td>
+                  <td>V10.0.0</td>
+                  <td><button id="state_2">Accessible</button></td>
+                </tr>
+                <tr>
+                  <td>03</td>
+                  <td>Order Statement</td>
+                  <td>Get your expected package in cart</td>
+                  <td>Do Trung Hau</td>
+                  <td>25/10/2024</td>
+                  <td>V10.0.0</td>
+                  <td><button id="state_3">In Develop</button></td>
+                </tr>
+                <tr>
+                  <td>04</td>
+                  <td>Note Board</td>
+                  <td>Raise your concern or leave comment</td>
+                  <td>Do Trung Hau</td>
+                  <td>15/10/2024</td>
+                  <td>V10.0.0</td>
+                  <td><button id="state_4">On Queue</button></td>
+                </tr>
+                <!-- <tr >
+                    <td>05</td>
+                    <td>Salina</td>
+                    <td>Coding</td>
+                    <td>03-24-22</td>
+                    <td>9:00AM</td>
+                    <td>4:00PM</td>
+                    <td><button>View</button></td>
+                  </tr>
+                  <tr >
+                    <td>06</td>
+                    <td>Tara Smith</td>
+                    <td>Testing</td>
+                    <td>03-24-22</td>
+                    <td>9:00AM</td>
+                    <td>4:00PM</td>
+                    <td><button>View</button></td>
+                  </tr> -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+
+    <script>
+      // Firebase configuration (replace with your own Firebase config)
+      const firebaseConfig = {
+        apiKey: "AIzaSyAtj1SB8ZlBhwChqRr7V_9hJQSqCW5zdjo",
+        authDomain: "dht-trace.firebaseapp.com",
+        projectId: "dht-trace",
+        storageBucket: "dht-trace.appspot.com",
+        messagingSenderId: "436573278890",
+        appId: "1:436573278890:web:1c73f0e0c5f7f8ee60b6d3",
+        measurementId: "G-3G5HGVCL6W",
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="main.js"></script>
+  </body>
+</html>

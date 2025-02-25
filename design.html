@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Power Tools | DTHub-Tracer</title>
+    <link rel="stylesheet" href="./design.css" />
+    <!-- Font Awesome Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+
+    <!-- Thêm thư viện XLSX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.9/jspdf.plugin.autotable.min.js"></script>
+  </head>
+  <body>
+    <div class="line"></div>
+    <header class="header">
+      <div class="logos">
+        <a href="#">TraceTool-PS</a>
+        <div class="search_box">
+          <input type="search" placeholder="Search Traceability" />
+          <i class="fa-solid fa-search"></i>
+        </div>
+      </div>
+      <div class="user-info">
+        <img class="acc" src="./img/user.png" alt="" />
+        <div id="username">Hello! Fixed-Term Diem Trinh</div>
+      </div>
+
+      <div class="header-icons">
+        <i class="fas fa-bell"></i>
+        <div class="account">
+          <h4 class="dthub">DTHub</h4>
+          <img class="key" src="./img/msn3-5.png" alt="" />
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <nav>
+        <ul>
+          <li>
+            <a href="#" class="logo">
+              <img src="./img/icon_global.png" />
+              <span class="nav-item1" style="color: black">Work Trace</span>
+            </a>
+          </li>
+          <li>
+            <a href="./main.html">
+              <i class="fas fa-solar-panel"></i>
+              <span class="nav-item">Item Panel</span>
+            </a>
+          </li>
+          <li>
+            <a href="./task.html">
+              <i class="fas fa-list-check"></i>
+              <span class="nav-item">Certification</span>
+            </a>
+          </li>
+          <li>
+            <a href="./report.html">
+              <i class="fas fa-users-rectangle"></i>
+              <span class="nav-item">Learning Portal</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" id="traceBoxLink">
+              <i class="fas fa-table-list"></i>
+              <span class="nav-item">Trace Box</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-user-tie"></i>
+              <span class="nav-item">About me</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <section class="main">
+        <h1 class="tt">Ticket Choice Management</h1>
+        <div class="conare">
+          <div class="gradient-bar">
+            <div class="color-1"></div>
+            <div class="color-2"></div>
+            <div class="color-3"></div>
+            <div class="color-4"></div>
+            <div class="color-5"></div>
+            <div class="color-6"></div>
+            <div class="color-7"></div>
+            <div class="color-8"></div>
+            <div class="color-9"></div>
+          </div>
+          <section class="mains">
+            <div class="box box-1 box-8">
+              <div class="box-leftx">
+                <h4>Work statement</h4>
+                <span class="year">E-Trace</span>
+                <!-- <span class="percentage">100%</span> -->
+                <div class="but">
+                  <button id="saoke">Fetch</button>
+                  <button id="saokex" class="saokex">Claim</button>
+                </div>
+              </div>
+              <div class="box-right">
+                <img src="./img/invoice.png" />
+              </div>
+            </div>
+            <div class="box box-2" id="subject-box" style="cursor: pointer">
+              <div class="box-details">
+                <h4>Subject</h4>
+                <span>Study Document</span>
+              </div>
+              <div class="box-icon">
+                <i class="fas fa-users"></i>
+              </div>
+            </div>
+            <div class="box box-3" id="project-box" style="cursor: pointer">
+              <div class="box-details">
+                <h4>Project</h4>
+                <span>Technical Project</span>
+              </div>
+              <div class="box-icon">
+                <i class="fas fa-tasks"></i>
+              </div>
+            </div>
+
+            <div class="box box-3" id="refer-box" style="cursor: pointer">
+              <div class="box-details">
+                <h4>References</h4>
+                <span>Support Document</span>
+              </div>
+              <div class="box-icon">
+                <i class="fas fa-wallet"></i>
+              </div>
+            </div>
+            <!-- <div
+              class="box box-4"
+              id="work-product-box"
+              style="cursor: pointer"
+            >
+              <div class="box-details">
+                <h4>References</h4>
+                <span>See also</span>
+              </div>
+              <div class="box-icon">
+                <i class="fas fa-wallet"></i>
+              </div>
+            </div> -->
+            <!-- <input type="file" id="pdf-file-input" style="display: none" /> -->
+          </section>
+        </div>
+
+        <div class="conare1">
+          <div class="mainss" id="content-list">
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox001"
+                      class="item-checkbox"
+                      value="WI_BK_ElecCir"
+                    />
+                    <label for="checkbox001" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_ElecCir</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Electric Circuit subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox002"
+                      class="item-checkbox"
+                      value="WI_BK_BasElec"
+                    />
+                    <label for="checkbox002" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_BasElec</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Basic Electronics subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox003"
+                      class="item-checkbox"
+                      value="WI_BK_AppMath"
+                    />
+                    <label for="checkbox003" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_AppMath</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Applied Mathematics subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox004"
+                      class="item-checkbox"
+                      value="WI_BK_SenMea"
+                    />
+                    <label for="checkbox004" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_SenMea</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Sensor and Measurement subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox005"
+                      class="item-checkbox"
+                      value="WI_BK_DigSys"
+                    />
+                    <label for="checkbox005" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_DigSys</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Digital Systems subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox006"
+                      class="item-checkbox"
+                      value="WI_BK_SigSys"
+                    />
+                    <label for="checkbox006" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_SigSys</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Signal and Systems subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox007"
+                      class="item-checkbox"
+                      value="WI_BK_EleFiec"
+                    />
+                    <label for="checkbox007" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_EleFie</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Electromagnetic Field subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox008"
+                      class="item-checkbox"
+                      value="WI_BK_DataCom"
+                    />
+                    <label for="checkbox008" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_DataCom</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Data Communications subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox009"
+                      class="item-checkbox"
+                      value="WI_BK_MicEng"
+                    />
+                    <label for="checkbox009" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_MicEng</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Microprocessor Engineering subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox010"
+                      class="item-checkbox"
+                      value="WI_BK_MicLab"
+                    />
+                    <label for="checkbox010" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_MicLab</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Microprocessor Laboratory subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox011"
+                      class="item-checkbox"
+                      value="WI_BK_ComSys"
+                    />
+                    <label for="checkbox011" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_ComSys</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Communication Systems subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox012"
+                      class="item-checkbox"
+                      value="WI_BK_ComLab"
+                    />
+                    <label for="checkbox012" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_ComLab</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Communication System Lab subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox013"
+                      class="item-checkbox"
+                      value="WI_BK_ICSysDes"
+                    />
+                    <label for="checkbox013" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_ICSysDes</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Integrated Circuit System Design subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox014"
+                      class="item-checkbox"
+                      value="WI_BK_ICSDLab"
+                    />
+                    <label for="checkbox014" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_ICSDLab</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Integrated Circuit System Design Lab
+                  subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox015"
+                      class="item-checkbox"
+                      value="WI_BK_WirComSys"
+                    />
+                    <label for="checkbox015" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_WirComSys</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Wireless Communication Systems subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox016"
+                      class="item-checkbox"
+                      value="WI_BK_VLSI"
+                    />
+                    <label for="checkbox016" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_VLSI</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to VLSI Design subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox017"
+                      class="item-checkbox"
+                      value="WI_BK_VLSILab"
+                    />
+                    <label for="checkbox017" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_VLSILab</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to VLSI Design Lab subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox018"
+                      class="item-checkbox"
+                      value="WI_BK_DSP"
+                    />
+                    <label for="checkbox018" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_DSP</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Digital Signal Processing subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox019"
+                      class="item-checkbox"
+                      value="WI_BK_DSPL"
+                    />
+                    <label for="checkbox019" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_DSPL</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Digital Signal Processing Lab subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox020"
+                      class="item-checkbox"
+                      value="WI_BK_IOT"
+                    />
+                    <label for="checkbox020" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_IOT</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Internet of Things subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox021"
+                      class="item-checkbox"
+                      value="WI_BK_IOTL"
+                    />
+                    <label for="checkbox021" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_IOTL</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Internet of Things Lab subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox022"
+                      class="item-checkbox"
+                      value="WI_BK_ArtInt"
+                    />
+                    <label for="checkbox022" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_ArtInt</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Artificial Intelligence subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox023"
+                      class="item-checkbox"
+                      value="WI_BK_MicroEng"
+                    />
+                    <label for="checkbox023" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_MicroEng</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Microwave Engineering subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox024"
+                      class="item-checkbox"
+                      value="WI_BK_DigCom"
+                    />
+                    <label for="checkbox024" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_DigCom</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Digital Communication subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox025"
+                      class="item-checkbox"
+                      value="WI_BK_MobCom"
+                    />
+                    <label for="checkbox025" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_MobCom</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Mobility Communications subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox026"
+                      class="item-checkbox"
+                      value="WI_BK_Calc1"
+                    />
+                    <label for="checkbox026" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_Calc1</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Calculus 1 subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox027"
+                      class="item-checkbox"
+                      value="WI_BK_Calc2"
+                    />
+                    <label for="checkbox027" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_Calc2</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Calculus 2 subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox028"
+                      class="item-checkbox"
+                      value="WI_BK_Calc3"
+                    />
+                    <label for="checkbox028" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_Calc3</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Calculus 3 subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-body-item">
+              <div class="item-top">
+                <div class="item-top-title">
+                  <div class="checkbox-wrapper">
+                    <input
+                      type="checkbox"
+                      id="checkbox029"
+                      class="item-checkbox"
+                      value="WI_BK_AppProb"
+                    />
+                    <label for="checkbox029" class="checkmark"></label>
+                  </div>
+                  <p style="font-size: 15px">WI_BK_AppProb</p>
+                </div>
+                <button class="item-top-btn">
+                  <img src="./img/text-books.png" alt="" />
+                </button>
+              </div>
+              <div class="item-body">
+                <p class="item-body-text">
+                  References related to Applied Statistical Probability subject
+                </p>
+                <div class="badge-group">
+                  <span class="badge-brown">Preview</span>
+                  <span class="badge-blue">Raise Request</span>
+                  <span class="badge-green">Comment</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Popup -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <!-- Thêm dòng này -->
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-storage.js"></script>
+
+    <script>
+      // Firebase configuration (replace with your own Firebase config)
+      const firebaseConfig = {
+        apiKey: "AIzaSyAtj1SB8ZlBhwChqRr7V_9hJQSqCW5zdjo",
+        authDomain: "dht-trace.firebaseapp.com",
+        projectId: "dht-trace",
+        storageBucket: "dht-trace.appspot.com",
+        messagingSenderId: "436573278890",
+        appId: "1:436573278890:web:1c73f0e0c5f7f8ee60b6d3",
+        measurementId: "G-3G5HGVCL6W",
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="./design.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script>
+      if (typeof pdfjsLib !== "undefined") {
+        pdfjsLib.GlobalWorkerOptions.workerSrc =
+          "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js";
+      }
+    </script>
+  </body>
+</html>

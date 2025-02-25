@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Cloud</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.0.6/wordcloud2.min.js"></script>
+    <style>
+      #wordcloud {
+        width: 600px;
+        height: 400px;
+        border: 1px solid #ccc;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 style="text-align: center">Master Yoda's Most Commonly Spoken Words</h2>
+    <div id="wordcloud"></div>
+
+    <script>
+      const words = [
+        ["you", 50],
+        ["Force", 30],
+        ["Jedi", 25],
+        ["Luke", 20],
+        ["dark", 20],
+        ["not", 20],
+        ["will", 18],
+        ["your", 17],
+        ["of", 16],
+        ["have", 15],
+        ["destiny", 14],
+        ["fear", 13],
+        ["anger", 12],
+        ["train", 12],
+        ["aggression", 11],
+        ["attack", 10],
+        ["power", 9],
+        ["peace", 8],
+        ["wisdom", 8],
+        ["knowledge", 7],
+        ["you", 50],
+        ["Force", 30],
+        ["Jedi", 25],
+        ["Luke", 20],
+        ["dark", 20],
+        ["not", 20],
+        ["will", 18],
+        ["your", 17],
+        ["of", 16],
+        ["have", 15],
+        ["destiny", 14],
+        ["fear", 13],
+        ["anger", 12],
+        ["train", 12],
+        ["aggression", 11],
+        ["attack", 10],
+        ["power", 9],
+        ["peace", 8],
+        ["wisdom", 8],
+        ["knowledge", 7],
+        ["you", 50],
+        ["Force", 30],
+        ["Jedi", 25],
+        ["Luke", 20],
+        ["dark", 20],
+        ["not", 20],
+        ["will", 18],
+        ["your", 17],
+        ["of", 16],
+        ["have", 15],
+        ["destiny", 14],
+        ["fear", 13],
+        ["anger", 12],
+        ["train", 12],
+        ["aggression", 11],
+        ["attack", 10],
+        ["power", 9],
+        ["peace", 8],
+        ["wisdom", 8],
+        ["knowledge", 7],
+        ["you", 50],
+        ["Force", 30],
+        ["Jedi", 25],
+        ["Luke", 20],
+        ["dark", 20],
+        ["not", 20],
+        ["will", 18],
+        ["your", 17],
+        ["of", 16],
+        ["have", 15],
+        ["destiny", 14],
+        ["fear", 13],
+        ["anger", 12],
+        ["train", 12],
+        ["aggression", 11],
+        ["attack", 10],
+        ["power", 9],
+        ["peace", 8],
+        ["wisdom", 8],
+        ["knowledge", 7],
+      ];
+
+      WordCloud(document.getElementById("wordcloud"), {
+        list: words,
+        gridSize: 10,
+        weightFactor: 1.5,
+        fontFamily: "Arial, sans-serif",
+        color: function () {
+          return "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+        },
+        backgroundColor: "#fff",
+      });
+    </script>
+  </body>
+</html>

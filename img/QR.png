@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Attendance Dashboard | By Code Info</title>
+    <link rel="stylesheet" href="note.css" />
+    <!-- Font Awesome Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script src="/qrcode.min.js"></script>
+  </head>
+  <body>
+    <div class="line"></div>
+    <header class="header">
+      <div class="logos">
+        <a href="#">TraceTool-PS</a>
+        <div class="search_box">
+          <input type="search" placeholder="Search Traceability" />
+          <i class="fa-solid fa-search"></i>
+        </div>
+      </div>
+      <div class="user-info">
+        <img class="acc" src="./img/user.png" alt="" />
+        <div id="username">Hello! Fixed-Term Diem Trinh</div>
+      </div>
+
+      <div class="header-icons">
+        <i class="fas fa-bell"></i>
+        <div class="account">
+          <h4 class="dthub">DTHub</h4>
+          <img class="key" src="./img/msn3-5.png" alt="" />
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <nav>
+        <ul>
+          <li>
+            <a href="#" class="logo">
+              <img src="./img/icon_global.png" />
+              <span class="nav-item1" style="color: black">Work Trace</span>
+            </a>
+          </li>
+          <li>
+            <a href="./main.html">
+              <i class="fas fa-solar-panel"></i>
+              <span class="nav-item">Item Panel</span>
+            </a>
+          </li>
+          <li>
+            <a href="./task.html">
+              <i class="fas fa-list-check"></i>
+              <span class="nav-item">Certification</span>
+            </a>
+          </li>
+          <li>
+            <a href="./report.html">
+              <i class="fas fa-users-rectangle"></i>
+              <span class="nav-item">Learning Portal</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-table-list"></i>
+              <span class="nav-item">Note Board</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-user-tie"></i>
+              <span class="nav-item">About me</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="main">
+        <div class="main-body">
+          <h1 id="ttl">Note Board is coming!</h1>
+          <div class="attendance-list1">
+            <div class="chart-cir">
+              <div class="containerx">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number">50%</div>
+                  </div>
+                </div>
+
+                <svg width="320px" height="320px">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#FFC312"></stop>
+                      <stop offset="50%" stop-color="#F79F1F"></stop>
+                      <stop offset="100%" stop-color="#EE5A24"></stop>
+                    </linearGradient>
+                  </defs>
+                  <circle cx="150" cy="150" r="130" stroke-linecap="round" />
+                </svg>
+              </div>
+              <div class="containerx">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number">70%</div>
+                  </div>
+                </div>
+
+                <svg width="320px" height="320px">
+                  <defs>
+                    <linearGradient id="GradientColor1">
+                      <stop offset="0%" stop-color="#4CAF50"></stop>
+                      <!-- Màu xanh lá cây đậm -->
+                      <stop offset="50%" stop-color="#8BC34A"></stop>
+                      <!-- Màu xanh lá cây nhạt hơn -->
+                      <stop offset="100%" stop-color="#CDDC39"></stop>
+                      <!-- Màu vàng xanh -->
+                    </linearGradient>
+                  </defs>
+                  <circle cx="150" cy="150" r="130" stroke-linecap="round" />
+                </svg>
+              </div>
+              <div class="containerx">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number">50%</div>
+                  </div>
+                </div>
+
+                <svg width="320px" height="320px">
+                  <defs>
+                    <linearGradient id="GradientColor2">
+                      <stop offset="0%" stop-color="#FFC312"></stop>
+                      <stop offset="50%" stop-color="#F79F1F"></stop>
+                      <stop offset="100%" stop-color="#EE5A24"></stop>
+                    </linearGradient>
+                  </defs>
+                  <circle cx="150" cy="150" r="130" stroke-linecap="round" />
+                </svg>
+              </div>
+            </div>
+            <div class="morecon">
+              <div class="containerxx">
+                <header>
+                  <h1>QR Code Generator</h1>
+                </header>
+                <div class="form">
+                  <input type="text" placeholder="Please enter text or url" />
+                  <div class="butcon">
+                    <button>Generator</button>
+                    <button id="dwld">QR Code</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="qr-code">
+              <img src="Image/QRCode.png" />
+            </div>
+          </div>
+          <div class="attendance-list2">
+            <div class="table-container">
+              <table id="resizableTable">
+                <thead>
+                  <tr>
+                    <th>Issue ID</th>
+                    <th>Issue Title</th>
+                    <th>Release ID</th>
+                    <th>Release</th>
+                    <th>Issue Assignee</th>
+                    <th>IA Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>RQONE03958397</td>
+                    <td>[Sample task] Build up...</td>
+                    <td>RQONE03974323</td>
+                    <td>BC: ComVeh / 4800.4.0...</td>
+                    <td>Ngo Huu Dat (MS/EJV53)</td>
+                    <td><span class="status new">New</span></td>
+                  </tr>
+                  <tr>
+                    <td>RQONE03939389</td>
+                    <td>[SAMPLE][ISZLCVEV_FR...</td>
+                    <td>RQONE03933994</td>
+                    <td>BC: ComVeh / 4800.0.0...</td>
+                    <td>Vu Duc Anh (MS/EJV53)</td>
+                    <td><span class="status analyzed">Analyzed</span></td>
+                  </tr>
+                  <tr>
+                    <td>RQONE03772812</td>
+                    <td>[SAMPLE][ISZLCVEV_FR...</td>
+                    <td>RQONE03799104</td>
+                    <td>BC: ComVeh / 4800.0.0...</td>
+                    <td>Tran Nhat Huy (MS/EJV53)</td>
+                    <td><span class="status analyzed">Analyzed</span></td>
+                  </tr>
+                  <tr>
+                    <td>RQONE03767123</td>
+                    <td>[SAMPLE][ISZLCVEV_FR...</td>
+                    <td>RQONE03799104</td>
+                    <td>BC: ComVeh / 4800.0.0...</td>
+                    <td>Nguyen Quoc Hoang (MS/EJV53)</td>
+                    <td><span class="status in-progress">In Progress</span></td>
+                  </tr>
+                  <tr>
+                    <td>RQONE03765871</td>
+                    <td>[Sample Task - ComVeh...</td>
+                    <td>RQONE03792293</td>
+                    <td>BC: ComVeh / 2267.4.0...</td>
+                    <td>Tran Quang Hao (MS/EJV53)</td>
+                    <td><span class="status analyzed">Analyzed</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="table-footer">
+                © 2021 Robert Bosch Manufacturing Solutions GmbH, all rights
+                reserved
+              </div>
+            </div>
+          </div>
+          <div class="attendance-list2">
+            <div class="table-container">
+              <table id="resizableTable">
+                <thead>
+                  <tr>
+                    <th>Issue ID</th>
+                    <th>Issue Title</th>
+                    <th>Release ID</th>
+                    <th>Release</th>
+                    <th>Issue Assignee</th>
+                    <th>IA Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>RQONE03958397</td>
+                    <td>[Sample task] Build up...</td>
+                    <td>RQONE03974323</td>
+                    <td>BC: ComVeh / 4800.4.0...</td>
+                    <td>Ngo Huu Dat (MS/EJV53)</td>
+                    <td><span class="status new">New</span></td>
+                  </tr>
+                  <tr>
+                    <td>RQONE03939389</td>
+                    <td>[SAMPLE][ISZLCVEV_FR...</td>
+                    <td>RQONE03933994</td>
+                    <td>BC: ComVeh / 4800.0.0...</td>
+                    <td>Vu Duc Anh (MS/EJV53)</td>
+                    <td><span class="status analyzed">Analyzed</span></td>
+                  </tr>
+                  <tr>
+                    <td>RQONE03772812</td>
+                    <td>[SAMPLE][ISZLCVEV_FR...</td>
+                    <td>RQONE03799104</td>
+                    <td>BC: ComVeh / 4800.0.0...</td>
+                    <td>Tran Nhat Huy (MS/EJV53)</td>
+                    <td><span class="status analyzed">Analyzed</span></td>
+                  </tr>
+                  <tr>
+                    <td>RQONE03767123</td>
+                    <td>[SAMPLE][ISZLCVEV_FR...</td>
+                    <td>RQONE03799104</td>
+                    <td>BC: ComVeh / 4800.0.0...</td>
+                    <td>Nguyen Quoc Hoang (MS/EJV53)</td>
+                    <td><span class="status in-progress">In Progress</span></td>
+                  </tr>
+                  <tr>
+                    <td>RQONE03765871</td>
+                    <td>[Sample Task - ComVeh...</td>
+                    <td>RQONE03792293</td>
+                    <td>BC: ComVeh / 2267.4.0...</td>
+                    <td>Tran Quang Hao (MS/EJV53)</td>
+                    <td><span class="status analyzed">Analyzed</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="table-footer">
+                © 2021 Robert Bosch Manufacturing Solutions GmbH, all rights
+                reserved
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-storage.js"></script>
+
+    <script>
+      // Firebase configuration (replace with your own Firebase config)
+      const firebaseConfig = {
+        apiKey: "AIzaSyAtj1SB8ZlBhwChqRr7V_9hJQSqCW5zdjo",
+        authDomain: "dht-trace.firebaseapp.com",
+        projectId: "dht-trace",
+        storageBucket: "dht-trace.appspot.com",
+        messagingSenderId: "436573278890",
+        appId: "1:436573278890:web:1c73f0e0c5f7f8ee60b6d3",
+        measurementId: "G-3G5HGVCL6W",
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+    <script src="note.js"></script>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

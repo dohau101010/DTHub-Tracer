@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Power Tools | DTHub-Tracer</title>
+    <link rel="stylesheet" href="./kahootIQ.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="start-btn">
+      <button>Start</button>
+    </div>
+    <div class="instruction">
+      <header>
+        <p>Some Rules of this quiz</p>
+      </header>
+      <div class="rules">
+        <p>
+          1. You will have only <span>30 seconds </span>to answer each
+          questions.
+        </p>
+        <p>2. Once you select your answer, you can't reselect.</p>
+        <p>3. You can't select any option once time goes off.</p>
+        <p>4. You can't exit from the Quiz while you're playing.</p>
+        <p>5. You'll get points on the basis of your correct answers.</p>
+      </div>
+      <div class="instruction-btn">
+        <button>Exit Quiz</button>
+        <button>Start Quiz</button>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <header>
+        <h4>Excellent Quiz App</h4>
+        <div class="Timer">
+          <p>Time Left</p>
+          <p>30</p>
+        </div>
+      </header>
+      <div class="timer-progress">
+        <div class="inner"></div>
+      </div>
+      <div class="question-container">What does HTML stand for ?</div>
+      <div class="option-container"></div>
+      <div class="status">
+        <p class="question-num">
+          <span class="current-question">1</span>
+          <span>of</span>
+          <span class="total-question">8 </span>
+          <span>Questions</span>
+        </p>
+        <div class="btn">
+          <button>Next</button>
+        </div>
+      </div>
+    </div>
+    <div class="result-card">
+      <header>
+        <p>Result</p>
+      </header>
+      <div class="image">
+        <div class="user-score">
+          <p class="value">30</p>
+          <p>Your Score</p>
+        </div>
+      </div>
+      <div class="score">
+        <div class="total-score">
+          <p class="value">50</p>
+          <p>Total Score</p>
+        </div>
+        <div class="attempted">
+          <p class="value">27</p>
+          <p>Attempted</p>
+        </div>
+        <div class="unattempted">
+          <p class="value">23</p>
+          <p>Unattempted</p>
+        </div>
+        <div class="wrong">
+          <p class="value">10</p>
+          <p>Wrong</p>
+        </div>
+      </div>
+      <div class="score-btn"></div>
+    </div>
+    <script src="./kahootIQ.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-storage.js"></script>
+
+    <script>
+      // Firebase configuration (replace with your own Firebase config)
+      const firebaseConfig = {
+        apiKey: "AIzaSyAtj1SB8ZlBhwChqRr7V_9hJQSqCW5zdjo",
+        authDomain: "dht-trace.firebaseapp.com",
+        projectId: "dht-trace",
+        storageBucket: "dht-trace.appspot.com",
+        messagingSenderId: "436573278890",
+        appId: "1:436573278890:web:1c73f0e0c5f7f8ee60b6d3",
+        measurementId: "G-3G5HGVCL6W",
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script>
+      const userName = sessionStorage.getItem("userName");
+      console.log(userName);
+      if (userName) {
+        const currentHour = new Date().getHours(); // Lấy giờ hiện tại
+        let greeting;
+
+        // Xác định thông điệp dựa trên giờ
+        if (currentHour < 12) {
+          greeting = "Good morning!";
+        } else if (currentHour < 18) {
+          greeting = "Good afternoon!";
+        } else {
+          greeting = "Good night!";
+        }
+
+        // Hiển thị thông điệp
+        document.getElementById(
+          "username"
+        ).textContent = `${greeting} ${userName}`;
+      } else {
+        console.log("Không có tên người dùng trong sessionStorage.");
+      }
+    </script>
+  </body>
+</html>

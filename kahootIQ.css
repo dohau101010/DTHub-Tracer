@@ -1,0 +1,332 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #4a52af, #10133d, #04061d);
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+.start-btn {
+  width: 100%;
+  text-align: center;
+  transform: scale(1);
+  overflow: hidden;
+}
+.start-btn button {
+  padding: 8px 16px; /* Giảm kích thước */
+  border: none;
+  background: lightgray;
+  border-radius: 6px;
+  color: black;
+  font-size: 16px; /* Giảm font size */
+  font-weight: 700;
+  width: 100%; /* Đặt lại width 100% để phù hợp với khung nhỏ */
+  max-width: 350px; /* Giới hạn chiều rộng */
+  box-shadow: 0px 2px 10px #2f2f2f;
+}
+.start-btn button:active {
+  transform: scale(0.9);
+}
+.wrapper {
+  width: 100%;
+  background: #fff;
+  transform: scale(0);
+  overflow: hidden;
+  border-radius: 5px;
+  max-width: 500px; /* Giới hạn chiều rộng của wrapper */
+}
+.instruction {
+  transform: scale(0);
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 8px;
+  opacity: 0;
+  max-width: 540px; /* Giới hạn chiều rộng */
+}
+.instruction header {
+  padding: 0 24px;
+  border-bottom: 1px solid #9d9d9e;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.instruction header p {
+  font-size: 20px; /* Giảm kích thước chữ */
+  font-weight: 600;
+  color: #000000;
+}
+.rules {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 15px 35px;
+}
+.rules p {
+  font-size: 15px; /* Giảm kích thước chữ */
+  font-weight: 400;
+  color: #000000;
+  margin: 5px 0;
+}
+.rules p span {
+  color: #007bff;
+  font-weight: 600;
+}
+.instruction-btn {
+  padding: 10px 12px;
+  display: flex;
+  justify-content: right;
+  width: 100%;
+  border-top: 1px solid #9a9a9b;
+  gap: 10px;
+}
+.instruction-btn button {
+  max-width: 0 5px;
+  height: 40px;
+  width: 100px;
+  font-size: 16px; /* Giảm kích thước chữ */
+  font-weight: 500;
+  border-radius: 5px;
+  border: 1px solid #007bff;
+  color: #fff;
+  background: #007bff;
+}
+.instruction-btn button:first-child:hover {
+  color: #007bff;
+  background: #fff;
+}
+.instruction-btn button:last-child:hover {
+  color: #007bff;
+  background: #fff;
+}
+.wrapper header {
+  padding: 5px 12px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #9b9b9b;
+  font-size: 17px;
+  /* box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1); */
+  height: 55px;
+}
+.wrapper header .Timer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #cce5ff;
+  border-radius: 5px;
+  border: 1px solid #b8daff;
+  font-size: 16px; /* Giảm kích thước chữ */
+  font-weight: 500;
+  padding: 0 10px;
+  width: 145px;
+  height: 40px;
+}
+.Timer p:last-child {
+  background: #343a40;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 5px;
+  height: 30px;
+  width: 45px;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid #343a40;
+}
+.timer-progress {
+  width: 100%;
+  height: 4px;
+  background: #fff;
+  margin-bottom: 5px;
+}
+.inner {
+  width: 0;
+  height: 4px;
+  background: #497d74;
+  transition: 0.7s all ease;
+}
+.question-container {
+  padding: 8px 10px; /* Giảm padding */
+  font-size: 18px; /* Giảm kích thước chữ */
+  font-weight: 500;
+}
+.option-container {
+  padding: 8px 10px; /* Giảm padding */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.option-container option {
+  padding: 8px 15px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #84c5fe;
+  background: aliceblue;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+.option-container option:hover {
+  color: #004085;
+  background: #cce5ff;
+  border-color: #b8daff;
+}
+.status {
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #c5c5c5;
+}
+.status .question-num {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 550;
+}
+.btn button {
+  padding: 8px 18px;
+  background: #007bff;
+  border: none;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 4px;
+  border: 1px solid #007bff;
+}
+.btn button:hover {
+  color: #007bff;
+  background: #fff;
+  border: 1px solid #007bff;
+}
+
+.result-card {
+  overflow: hidden;
+  transform: scale(0);
+  width: 0%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 5px;
+}
+.image {
+  padding: 10px 12px;
+  text-align: center;
+}
+.image img {
+  width: 90px; /* Giảm kích thước ảnh */
+}
+.score {
+  padding: 10px 12px;
+  display: grid;
+  grid-template-columns: auto auto;
+  font-weight: 500;
+  gap: 10px;
+}
+.score div {
+  width: 100%;
+  text-align: center;
+  border: 1px solid blue;
+  padding: 20px 10px;
+  font-size: 13px;
+  border-radius: 5px;
+}
+.score .value {
+  font-size: 25px;
+  font-weight: 900;
+}
+.total-score {
+  background: #6572ff57;
+}
+.total-score .value {
+  color: #6572ff;
+}
+.attempted {
+  background: #0e943f3d;
+  border: 1px solid #0e943f !important;
+}
+.attempted .value {
+  color: #0e943f;
+}
+.wrong {
+  background: #ff101047;
+  border: 1px solid #ff1010 !important;
+}
+.wrong .value {
+  color: #ff1010;
+}
+.score span:first-child {
+  color: #9754ff;
+}
+.score span:nth-child(3) {
+  color: #40b462;
+}
+.score span:last-child {
+  color: #5060ec;
+}
+.user-score {
+  width: 90px; /* Giảm kích thước vòng tròn */
+  height: 90px;
+  margin: 0 auto;
+  background: #108fff54;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 50%;
+  border: 2px solid #108fff;
+}
+.user-score .value {
+  font-size: 25px; /* Giảm kích thước font */
+  font-weight: 900;
+  color: #108fff;
+}
+.user-score p {
+  font-size: 12px; /* Giảm kích thước chữ */
+  font-weight: 700;
+}
+.score-btn {
+  padding: 10px 12px;
+  display: flex;
+  justify-content: right;
+  width: 100%;
+  gap: 10px;
+  border-top: 1px solid #909090;
+}
+.result-card header {
+  padding: 10px 12px;
+  border-bottom: 1px solid #909090;
+  font-weight: 600;
+}
+.score-btn button {
+  padding: 6px 12px;
+  background: none;
+  border: none;
+  border-radius: 4px;
+}
+.score-btn button:first-child {
+  border: 1px solid #5e6ce7;
+  color: #5e6ce7;
+}
+.score-btn button:last-child {
+  background: #5e6ce7;
+  color: #fff;
+}
+option:hover {
+  background: #646ff0;
+  color: #fff;
+}

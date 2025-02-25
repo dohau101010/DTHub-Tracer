@@ -1,0 +1,1015 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  /* outline: none;
+  border: none; */
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: rgb(226, 226, 226);
+}
+nav {
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 65px;
+  /* width: 280px; */
+  background: #fff;
+  overflow: hidden;
+  transition: 0.5s;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #b6a9a9, -5px -5px 10px #ffffff;
+}
+ul {
+  position: relative;
+  right: 13px;
+}
+nav:hover {
+  width: 280px;
+  transition: 1s;
+}
+.logo {
+  text-align: center;
+  display: flex;
+  margin: 10px 0 0 10px;
+  padding-bottom: 3rem;
+}
+.logox {
+  animation: planetAn 30s linear infinite;
+  transform-origin: center;
+}
+@keyframes planetAn {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.logo span {
+  font-weight: bold;
+  padding-left: 15px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+a {
+  position: relative;
+  width: 280px;
+  font-size: 14px;
+  color: rgb(85, 83, 83);
+  display: table;
+  padding: 10px;
+}
+nav .fas {
+  position: relative;
+  width: 80px;
+  height: 50px;
+  top: 20px;
+  right: 50px;
+  font-size: 20px;
+  text-align: center;
+  color: #000;
+}
+
+.nav-item {
+  position: relative;
+  top: 18px;
+  right: 60px;
+  margin-left: 10px;
+  color: #000;
+  font-size: medium;
+}
+#er {
+  position: relative;
+  width: 80px;
+  height: 50px;
+  top: 20px;
+  right: 60px;
+  font-size: 20px;
+  text-align: center;
+  color: #000;
+}
+.nav-itemxx {
+  position: relative;
+  top: 15px;
+  right: 70px;
+  margin-left: 10px;
+  color: #000;
+  font-size: medium;
+}
+.nav-item1 {
+  position: relative;
+  top: 10px;
+  right: 10px;
+  margin-left: 10px;
+  color: #000;
+  font-size: medium;
+}
+a:hover {
+  background: #eee;
+}
+a:hover i {
+  color: #34af6d;
+  transition: 0.5s;
+}
+.logout {
+  position: absolute;
+  bottom: 0;
+}
+
+.container1 {
+  display: flex;
+  margin-top: 10px;
+}
+
+/* MAin Section */
+.main {
+  position: relative;
+  bottom: 20px;
+  padding: 20px;
+  width: 100%;
+}
+.main-top {
+  display: flex;
+  width: 100%;
+}
+.main-top i {
+  position: absolute;
+  right: 0;
+  margin: 10px 30px;
+  color: rgb(110, 109, 109);
+  cursor: pointer;
+}
+.main .users {
+  display: flex;
+  width: 100%;
+}
+.users .card {
+  width: 25%;
+  margin: 10px;
+  background: #fff;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 5px 5px 10px #827d7d, -5px -5px 10px #dfdcdc;
+}
+.users .card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.users .card h4 {
+  text-transform: uppercase;
+}
+.users .card p {
+  font-size: 12px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+.users table {
+  margin: auto;
+}
+.users .per span {
+  padding: 5px;
+  border-radius: 10px;
+  background: rgb(223, 223, 223);
+}
+.users td {
+  font-size: 14px;
+  padding-right: 15px;
+}
+
+.users .card button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 7px;
+  cursor: pointer;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid #507687;
+}
+.users .card button:hover {
+  background: #227b94;
+  color: #fff;
+  transition: 0.5s;
+}
+
+/*Attendance List serction  */
+.attendance {
+  margin-top: 20px;
+  text-transform: capitalize;
+  width: 100%;
+}
+
+.attendance-list {
+  position: relative;
+  padding-top: 6px; /* Optional: adds space for the gradient bar */
+  width: 100%;
+  padding: 10px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #827d7d, -5px -5px 10px #dfdcdc;
+}
+
+.attendance-list1 {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 15px;
+  margin-bottom: 10px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #827d7d, -5px -5px 10px #dfdcdc;
+  justify-items: center;
+}
+.gradient-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  display: flex;
+}
+
+.gradient-bar div {
+  height: 100%;
+}
+
+.color-1 {
+  background-color: #8b1e3f;
+  flex: 1.2;
+  border-radius: 5px 0px 0 0; /* Bo tròn ở cạnh trên */
+} /* Đỏ đậm */
+.color-2 {
+  background-color: #e02f2f;
+  flex: 0.8;
+} /* Đỏ tươi */
+.color-3 {
+  background-color: #a936b8;
+  flex: 1.5;
+} /* Tím đậm */
+.color-4 {
+  background-color: #3e518d;
+  flex: 1;
+} /* Xanh dương đậm */
+.color-5 {
+  background-color: #4f64b7;
+  flex: 1.3;
+} /* Xanh dương trung bình */
+.color-6 {
+  background-color: #58a2c6;
+  flex: 0.7;
+} /* Xanh dương nhạt */
+.color-7 {
+  background-color: #0a9f91;
+  flex: 1.1;
+} /* Xanh ngọc */
+.color-8 {
+  background-color: #79c36b;
+  flex: 1.6;
+} /* Xanh lá */
+.color-9 {
+  background-color: #a8cc5c;
+  flex: 0.9;
+  border-radius: 0px 5px 0 0; /* Bo tròn ở cạnh trên */
+} /* Xanh lá nhạt */
+
+/* ....................................................... */
+.line {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 8px;
+  content: "";
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  background-image: url(./img/line.svg);
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 20px;
+  background: #fff;
+  /* border: 1px solid black; */
+  box-shadow: #ddd;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #b6a9a9, -5px -5px 10px #ffffff;
+  width: 100vw;
+}
+.logos {
+  display: flex;
+  align-items: center;
+}
+.logos img {
+  margin-top: 5px;
+  height: 50px;
+}
+.logos a {
+  position: relative;
+  right: 50px;
+  color: #000;
+  font-size: 24px;
+  font-weight: 1000;
+  text-transform: capitalize;
+  background-image: linear-gradient(
+    to right,
+    #00f24d,
+    #b17307,
+    #0354a5,
+    #46e172
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  background-size: 300%;
+  background-position: -100%;
+
+  animation: animatedText 5s infinite alternate-reverse;
+}
+@keyframes animatedText {
+  to {
+    background-position: 100%;
+  }
+}
+.search_box {
+  width: 300px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border: solid #302d33 2px;
+  border-radius: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: width 0.3s ease; /* Hiệu ứng giãn ra */
+  transform-origin: center;
+}
+
+.search_box:hover {
+  width: 350px; /* Đặt chiều rộng lớn hơn khi đưa chuột vào */
+}
+
+.search_box input {
+  padding: 7px;
+  width: 250px;
+  background: none;
+  border: none;
+  outline: none;
+  transition: width 0.3s ease; /* Hiệu ứng giãn chiều rộng */
+}
+
+.search_box input:focus {
+  width: 350px; /* Giữ chiều rộng lớn hơn khi ô nhập liệu được chọn */
+}
+
+.search_box:hover input {
+  width: 350px; /* Đảm bảo chiều rộng của ô input không thay đổi khi không focus */
+}
+
+.search_box i {
+  padding: 0.66rem;
+  cursor: pointer;
+  color: #000000;
+  background: none;
+  border: none;
+  font-size: 16px;
+}
+.header-icons {
+  display: flex;
+  align-items: center;
+}
+.header-icons i {
+  margin-right: 2rem;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.header-icons .account {
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-icons .account .key {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+#username {
+  font-size: 17px;
+  color: #31511e;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  margin-right: 30px;
+  margin-top: 4px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.user-info .acc {
+  width: 27px; /* Điều chỉnh kích thước ảnh tùy ý */
+  height: 27px;
+  margin-right: 20px; /* Khoảng cách giữa ảnh và tên */
+  margin-top: 5px;
+}
+
+h1 {
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+/* RESET STYLES & HELPER CLASSES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+  --level-1: #8dccad;
+  --level-2: #f5cc7f;
+  --level-3: #7b9fe0;
+  --level-4: #f27c8d;
+  --black: black;
+}
+
+ol {
+  list-style: none;
+}
+
+body {
+  text-align: center;
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  max-width: 100%;
+  padding: 0 10px;
+  margin-top: 20px;
+}
+
+.rectangle {
+  position: relative;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* LEVEL-1 STYLES
+    –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.level-1 {
+  width: 30%;
+  margin: 0 auto 40px;
+  background: #7ed4ad;
+  text-align: center;
+}
+
+.level-1::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 20px;
+  background: var(--black);
+}
+
+/* LEVEL-2 STYLES
+    –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.level-2-wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 2fr); /* Change to 3 columns */
+}
+
+.level-2-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 16.67%; /* Adjusted for 3 columns */
+  width: 66.66%; /* Adjusted for 3 columns */
+  height: 2px;
+  background: var(--black);
+}
+
+.level-2-wrapper::after {
+  display: none;
+  content: "";
+  position: absolute;
+  left: -20px;
+  bottom: -20px;
+  width: calc(100% + 20px);
+  height: 2px;
+  background: var(--black);
+}
+
+.level-2-wrapper li {
+  position: relative;
+}
+
+.level-2-wrapper > li::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 20px;
+  background: var(--black);
+}
+
+.level-2 {
+  width: 70%;
+  margin: 0 auto 40px;
+  background: #ffb26f;
+}
+.level-1:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Bóng khi hover */
+}
+.level-2:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Bóng khi hover */
+}
+.level-3:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Bóng khi hover */
+}
+.level-4:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Bóng khi hover */
+}
+.level-2::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 20px;
+  background: var(--black);
+}
+
+.level-2::after {
+  display: none;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-100%, -50%);
+  width: 20px;
+  height: 2px;
+  background: var(--black);
+}
+
+/* LEVEL-3 STYLES
+    –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.level-3-wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.level-3-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: calc(25% - 5px);
+  width: calc(50% + 10px);
+  height: 2px;
+  background: var(--black);
+}
+
+.level-3-wrapper > li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  width: 2px;
+  height: 20px;
+  background: var(--black);
+}
+
+.level-3 {
+  margin-bottom: 20px;
+  background: #a2d2df;
+  position: relative;
+}
+
+/* Improved tooltip styling with icon */
+.level-3.rectangle:hover::after {
+  content: "ℹ️ This document is compiled and copyrighted by the author. Please do not replace or distribute it in any form without permission.";
+  position: absolute;
+  bottom: 120%; /* Adjusts distance above element */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  padding: 10px;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+  font-weight: normal; /* Regular font weight */
+  line-height: 1.4;
+  text-align: left; /* Align text to the left */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: normal;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+}
+
+/* Tooltip arrow */
+.level-3.rectangle:hover::before {
+  content: "";
+  position: absolute;
+  bottom: 110%; /* Adjusts the arrow's position above the tooltip */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent; /* Arrow pointing down */
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1;
+}
+
+/* Improved tooltip styling with icon */
+.level-3.rectangle.ext:hover::after {
+  content: "ℹ️ TThis is an external document. Please handle it with caution and follow the necessary permissions and copyright guidelines.";
+  position: absolute;
+  bottom: 120%; /* Adjusts distance above element */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  padding: 10px;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+  font-weight: normal; /* Regular font weight */
+  line-height: 1.4;
+  text-align: left; /* Align text to the left */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: normal;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+}
+
+/* Tooltip arrow */
+.level-3.rectangle.ext:hover::before {
+  content: "";
+  position: absolute;
+  bottom: 110%; /* Adjusts the arrow's position above the tooltip */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent; /* Arrow pointing down */
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1;
+}
+/* Show tooltip and arrow on hover */
+.level-3.rectangle:hover::after,
+.level-3.rectangle:hover::before,
+.level-3.rectangle.ext:hover::after,
+.level-3.rectangle.ext:hover::before {
+  opacity: 1;
+}
+
+/* LEVEL-4 STYLES
+    –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.level-4-wrapper {
+  position: relative;
+  width: 80%;
+  margin-left: auto;
+}
+
+.level-4-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 2px;
+  height: calc(100% + 20px);
+  background: var(--black);
+}
+
+.level-4-wrapper li + li {
+  margin-top: 20px;
+}
+
+.level-4 {
+  font-weight: normal;
+  background: #cbd2a4;
+}
+
+.level-4::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-100%, -50%);
+  width: 20px;
+  height: 2px;
+  background: var(--black);
+}
+.level-4:hover .tooltip {
+  display: block;
+  opacity: 1;
+}
+
+/* Tooltip text container */
+.int-sub-1 .tooltiptext {
+  visibility: hidden;
+  width: 600px;
+  background-color: #f9f9f9;
+  color: #000; /* Set text color to black */
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -150px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-weight: normal; /* Remove bold text */
+}
+
+/* Show tooltip when hovering over the int-sub-1 element */
+.int-sub-1:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Folder styling */
+.folder {
+  padding: 5px;
+  font-weight: normal; /* Set font weight to normal */
+  margin-bottom: 5px;
+}
+
+.folder::before {
+  content: "\1F4C1"; /* Folder icon */
+  margin-right: 5px;
+}
+
+/* File styling */
+.file {
+  padding-left: 20px;
+  font-weight: normal; /* Set font weight to normal */
+}
+
+/* PDF icon styling */
+.file-pdf::before {
+  content: "\1F4C4"; /* PDF icon */
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+/* PPTX icon styling */
+.file-pptx::before {
+  content: "\1F4D6"; /* PPTX icon */
+  margin-right: 5px;
+  font-size: 16px;
+}
+/* MQ STYLES
+    –––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (max-width: 700px) {
+  .rectangle {
+    padding: 20px 10px;
+  }
+
+  .level-1,
+  .level-2 {
+    width: 100%;
+  }
+
+  .level-1 {
+    margin-bottom: 20px;
+  }
+
+  .level-1::before,
+  .level-2-wrapper > li::before {
+    display: none;
+  }
+
+  .level-2-wrapper,
+  .level-2-wrapper::after,
+  .level-2::after {
+    display: block;
+  }
+
+  .level-2-wrapper {
+    width: 90%;
+    margin-left: 10%;
+  }
+
+  .level-2-wrapper::before {
+    left: -20px;
+    width: 2px;
+    height: calc(100% + 40px);
+  }
+
+  .level-2-wrapper > li:not(:first-child) {
+    margin-top: 50px;
+  }
+}
+
+.tt {
+  margin-top: 10px;
+}
+
+/* table */
+.table1 {
+  width: 100%;
+}
+table {
+  width: 100%; /* Đặt chiều rộng của bảng bằng 100% */
+  min-width: auto;
+  border-collapse: collapse;
+  border-spacing: 0px;
+}
+
+.table-filter {
+  border-radius: 5px;
+}
+
+table th {
+  background-color: #133b5c;
+  color: rgb(241, 245, 179);
+  text-align: center;
+  font-weight: normal;
+  font-size: 16px;
+  font-weight: 500;
+
+  /* outline: 0.7px solid black; */
+  /* border: 1.5px solid black; */
+}
+
+table th {
+  padding: 13px;
+  border-top: 1px solid #000000; /* Chỉ thêm đường kẻ ngang */
+  border-bottom: 1px solid #000000; /* Chỉ thêm đường kẻ ngang */
+}
+table td {
+  padding: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #000000; /* Chỉ thêm đường kẻ ngang */
+  border-bottom: 1px solid #000000; /* Chỉ thêm đường kẻ ngang */
+}
+
+table td {
+  text-align: left;
+  font-size: 15px;
+  padding-left: 20px;
+}
+
+/* status */
+
+.containerx .progress-container .progress-bar {
+  position: relative;
+  width: 250px;
+  height: 20px;
+  border-radius: 30px;
+  background-color: white;
+  box-shadow: 3px 4px 5px 0px rgba(204 185 185 / 0.75);
+}
+
+.containerx .progress-container .progress-bar span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: center;
+  border-radius: 30px;
+  background: linear-gradient(
+    90deg,
+    rgba(76, 175, 80, 1) 50%,
+    rgba(50, 222, 132, 1) 100%
+  );
+  transition: width 0.5s linear;
+}
+
+.dthub {
+  margin-top: 4px;
+  color: #000;
+  font-size: 16px;
+  text-transform: capitalize;
+  background-image: linear-gradient(
+    to right,
+    #00f260,
+    #f79d00,
+    #0575e6,
+    #64f38c
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  background-size: 300%;
+  background-position: -100%;
+
+  animation: animatedText 5s infinite alternate-reverse;
+}
+
+/* .rp{
+  margin-left: 14px;
+} */
+
+h2 {
+  font-size: 22px;
+}
+
+td button {
+  background-color: none;
+  background: none;
+}
+.sub-state {
+  border: 1px solid rgb(3, 104, 120);
+  color: rgb(3, 104, 120);
+  padding: 5px 17px 5px 17px;
+  border-radius: 70px;
+}
+.sub-state_non {
+  border: 1px solid #e50046;
+  color: #e50046;
+  padding: 5px 10px 5px 10px;
+  border-radius: 70px;
+}
+.btn {
+  width: 100%;
+  display: flex; /* Sử dụng flexbox */
+  justify-content: space-around; /* Căn giữa các phần tử */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  padding-left: 2px;
+  padding-right: 2px;
+  margin-top: 6px;
+}
+
+#item-count {
+  margin-right: auto; /* Đẩy thông báo sang bên trái */
+}
+
+.button-group {
+  display: flex; /* Hiển thị các nút theo hàng ngang */
+  margin-top: 2px;
+}
+#back-btn,
+#next-btn {
+  margin-right: 10px;
+  padding: 2px;
+  width: 80px;
+  background: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: rgb(1, 1, 131);
+  text-align: center;
+}
+#back-btn:hover,
+#next-btn:hover {
+  background-color: rgb(1, 1, 131); /* Màu nền khi hover */
+  color: white; /* Màu chữ khi hover */
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
