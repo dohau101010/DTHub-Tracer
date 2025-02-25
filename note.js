@@ -19,18 +19,6 @@ if (userName) {
   console.log("Không có tên người dùng trong sessionStorage.");
 }
 
-let number = document.getElementById("number");
-let count = 0;
-
-setInterval(() => {
-  if (count == 10) {
-    clearInterval();
-  } else {
-    count += 1;
-    number.innerHTML = `${count}%`;
-  }
-}, 87);
-
 // fill table
 const questionRef = database.ref("Admin/NoticeBoard/Question");
 
