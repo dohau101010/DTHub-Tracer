@@ -601,13 +601,12 @@ table thead tr {
 }
 
 .message {
-  padding: 5px;
-  margin-bottom: 10px;
+  padding: 2px;
   border-radius: 5px;
 }
 
 .message.received {
-  background-color: #e1f5fe;
+  background-color: none;
   color: #0277bd;
   text-align: left;
   font-family: "Courier New", Courier, monospace;
@@ -616,9 +615,9 @@ table thead tr {
 }
 
 .message.sent {
-  background-color: #c8e6c9;
+  background-color: none;
   color: #5f9662;
-  text-align: right;
+  text-align: left;
   font-family: "Courier New", Courier, monospace;
   font-size: 12px;
   text-transform: none;
@@ -966,4 +965,33 @@ th {
   padding: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   text-align: center;
+}
+
+/* .......................................................................................................................................................... */
+.upload-container {
+  border: none;
+  margin-top: 45px;
+  padding: 20px;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.upload-label {
+  font-size: 16px;
+  color: #007bff;
+}
+
+.upload-input {
+  display: none;
+}
+
+.upload-container.drag-over {
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+#upload-status {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #28a745;
 }
