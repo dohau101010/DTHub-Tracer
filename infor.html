@@ -184,7 +184,9 @@
             </div>
             <div class="chat-box">
               <div class="chat-messages" id="chat-messages">
-                <div class="message received">Hello! How can I assist you?</div>
+                <div class="message received">
+                  PwrUsr >> Hello! How can I assist you?
+                </div>
               </div>
               <div class="chat-input">
                 <input
@@ -294,6 +296,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
 
     <script>
       // Firebase configuration (replace with your own Firebase config)
@@ -307,6 +310,7 @@
         measurementId: "G-3G5HGVCL6W",
       };
       firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
     </script>
     <!-- <script>
       let chartConfig = {
