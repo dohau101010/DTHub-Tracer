@@ -198,14 +198,14 @@ document.addEventListener("DOMContentLoaded", function () {
 // ................................
 
 // ......................................................................................................
-document
-  .getElementById("traceBoxLink")
-  .addEventListener("click", function (event) {
-    event.preventDefault(); // Ngăn chặn chuyển trang mặc định
+// document
+//   .getElementById("traceBoxLink")
+//   .addEventListener("click", function (event) {
+//     event.preventDefault(); // Ngăn chặn chuyển trang mặc định
 
-    if (userName === "Do Trung Hau" || userName === "Vũ An") {
-      window.location.href = "infor.html"; // Chuyển hướng nếu user hợp lệ
-    } else {
-      alert("User account does not have permission to access this page!");
-    }
-  });
+//     if (userName === "Do Trung Hau" || userName === "Vũ An") {
+//       window.location.href = "infor.html"; // Chuyển hướng nếu user hợp lệ
+//     } else {
+//       alert("User account does not have permission to access this page!");
+//     }
+//   });
