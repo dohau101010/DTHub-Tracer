@@ -1,83 +1,159 @@
-// PROGRESSBAR
-const allProgress = document.querySelectorAll("main .card .progress");
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Power Tools | DTHub-Tracer</title>
+    <link rel="stylesheet" href="reports.css" />
+    <!-- Font Awesome Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+  </head>
 
-allProgress.forEach((item) => {
-  item.style.setProperty("--value", item.dataset.value);
-});
+  <body>
+    <div class="line"></div>
+    <header class="header">
+      <div class="logos">
+        <a href="#">TraceTool-PS</a>
+        <div class="search_box">
+          <input type="search" placeholder="Search Traceability" />
+          <i class="fa-solid fa-search"></i>
+        </div>
+      </div>
+      <div class="user-info">
+        <img class="acc" src="./img/user.png" alt="" />
+        <div id="username">Badly! Unknown User Detected! Please login again!</div>
+      </div>
 
-let display = 0;
-// APEXCHART
-var options = {
-  series: [
-    {
-      name: "Planned Effort",
-      data: [31, 40, 28, 51, 42, 109, 100],
-    },
-    {
-      name: "Actual Effort",
-      data: [11, 32, 45, 32, 34, 52, 41],
-    },
-  ],
-  chart: {
-    height: 350,
-    type: "area",
-  },
-  dataLabels: {
-    enabled: false,
-  },
-  stroke: {
-    curve: "smooth",
-  },
-  xaxis: {
-    type: "datetime",
-    categories: [
-      "2018-09-19T00:00:00.000Z",
-      "2018-09-19T01:30:00.000Z",
-      "2018-09-19T02:30:00.000Z",
-      "2018-09-19T03:30:00.000Z",
-      "2018-09-19T04:30:00.000Z",
-      "2018-09-19T05:30:00.000Z",
-      "2018-09-19T06:30:00.000Z",
-    ],
-  },
-  tooltip: {
-    x: {
-      format: "dd/MM/yy HH:mm",
-    },
-  },
-};
+      <div class="header-icons">
+        <i class="fas fa-bell"></i>
+        <div class="account">
+          <h4 class="dthub">DTHub</h4>
+          <img class="key" src="./img/msn3-5.png" alt="" />
+        </div>
+      </div>
+    </header>
 
-var chart = new ApexCharts(document.querySelector("#charts"), options);
-chart.render();
+    <div class="container">
+      <nav>
+        <ul>
+          <li>
+            <a href="#" class="logo">
+              <img src="./img/icon_global.png" />
+              <span class="nav-item1" style="color: black">Work Trace</span>
+            </a>
+          </li>
+          <li>
+            <a href="./main.html">
+              <i class="fas fa-solar-panel"></i>
+              <span class="nav-item">Item Panel</span>
+            </a>
+          </li>
+          <li>
+            <a href="./task.html">
+              <i class="fas fa-list-check"></i>
+              <span class="nav-item">Certification</span>
+            </a>
+          </li>
+          <li>
+            <a href="./report.html">
+              <i class="fas fa-users-rectangle"></i>
+              <span class="nav-item">Learning Portal</span>
+            </a>
+          </li>
+          <li>
+            <a href="./infor.html">
+              <i class="fas fa-table-list"></i>
+              <span class="nav-item">Trace Box</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-user-tie"></i>
+              <span class="nav-item">About me</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-function updateChartContent() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("head").innerHTML = `
-               <h3>Work Visualization</h3>
+      <!-- MAIN -->
+      <main>
+        <h1 class="title">Work Progress View</h1>
+        <div class="info-data">
+          <div class="card" onclick="updateChartContent()">
+            <div class="head">
+              <div>
+                <h2>DTHub.Porn Portal</h2>
+                <p>In Progress</p>
+              </div>
+              <i class="bx bx-trending-up icon"></i>
+            </div>
+            <span class="progress" data-value="10%"></span>
+            <span class="label">10%</span>
+          </div>
+          <div class="card" onclick="updateChartContent2()">
+            <div class="head">
+              <div>
+                <h2>Telecom Portal</h2>
+                <p>New</p>
+              </div>
+              <i class="bx bx-trending-down icon down"></i>
+            </div>
+            <span class="progress" data-value="5%"></span>
+            <span class="label">5%</span>
+          </div>
+          <div class="card" onclick="updateChartContent3()">
+            <div class="head">
+              <div>
+                <h2>Process Management</h2>
+                <p>New</p>
+              </div>
+              <i class="bx bx-trending-up icon"></i>
+            </div>
+            <span class="progress" data-value="5%"></span>
+            <span class="label">5%</span>
+          </div>
+          <div class="card" onclick="updateChartContent4()">
+            <div class="head">
+              <div>
+                <h2>Reference - Relevant</h2>
+                <p>New</p>
+              </div>
+              <i class="bx bx-trending-up icon"></i>
+            </div>
+            <span class="progress" data-value="0%"></span>
+            <span class="label">0%</span>
+          </div>
+        </div>
+        <div class="data">
+          <div class="content-data">
+            <div class="head" id="head">
+              <h3>Work Visualization</h3>
+              <div class="menu">
+                <i class="bx bx-dots-horizontal-rounded icon"></i>
+                <ul class="menu-link">
+                  <li><a href="#">Edit</a></li>
+                  <li><a href="#">Save</a></li>
+                  <li><a href="#">Remove</a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- <div class="head" id="head">
+              <h3>Work Visualization</h3>
               <div>
                 <button id="extbut">External</button>
                 <button id="extbut">Export</button>
-                <button id="extbut3">Raise Concern</button>
               </div>
-
-`;
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/videoseries?list=PLp722n3WNwaU5K2Kz0Yvo-540P1IZ0Wg9" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-
-`;
-
-  document.getElementById("content-data").innerHTML = ` <div class="order">
+            </div> -->
+            <div class="chart">
+              <div id="chart">
+                <div id="charts"></div>
+              </div>
+            </div>
+          </div>
+          <div id="content-data" class="content-data">
+            <div class="order">
               <div class="head">
                 <h3>Work Item</h3>
                 <i class="bx bx-search"></i>
@@ -86,1506 +162,61 @@ function updateChartContent() {
               <table>
                 <thead>
                   <tr>
-                    <th>Courses</th>
-                    <th>Quantity</th>
-                    <th>Quality</th>
+                    <th>User</th>
+                    <th>Planning date</th>
                     <th>Status</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr onclick= "updateSubVideo1()">
-                    <td>
-                      <img src="./img/good-person.png" />
-                      <p>Digital System</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status completed">In Progress</div></td>
-                    <td><div class="status completed">In Progress</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo2()">
-                    <td>
-                      <img src="./img/good-person.png" />
-                      <p>Signal and Systems</p>
-                    </td>
-                    <td>25</td>
-                    <td><div class="status process">New</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo3()">
-                    <td>
-                      <img src="./img/good-person.png" />
-                      <p>Sensor and Measurement</p>
-                    </td>
-                    <td>15</td>
-                    <td><div class="status process">New</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo4()">
-                    <td>
-                      <img src="./img/good-person.png" />
-                      <p>Principle of PIC16F887</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Trace</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo5()">
-                    <td>
-                      <img src="./img/good-person.png" />
-                      <p>PIC18F4550 Laboratory</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo6()">
-                    <td>
-                      <img src="./img/good-person.png" />
-                      <p>Data Com Lab</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo7()">
-                    <td>
-                      <img src="./img/good-person.png" />
-                      <p>Digital System Lab</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo8()">
-                    <td>
-                      <img src="./img/good-person.png" />
-                      <p>Communication System</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo9()">
-                    <td>
-                      <img src="./img/good-person.png" />
-                      <p>Basic Electronics</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo10()">
-                    <td>
-                      <img src="./img/good-person.png" />
-                      <p>Electromagnetic Field</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo11()">
-                    <td>
-                      <img src="./img/good-person.png" />
-                      <p>VLSI Lab</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo12()">
-                    <td>
-                      <img src="./img/good-person.png" />
-                      <p>DSP Lab</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo13()">
-                    <td>
-                      <img src="./img/good-person.png" />
-                      <p>Digital Signal Processing</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo14()">
-                    <td>
-                      <img src="./img/good-person.png" />
-                      <p>Communication System Lab</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo15()">
-                    <td>
-                      <img src="./img/good-person.png" />
-                      <p>FPGA Lab</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo16()">
-                    <td>
-                      <img src="./img/good-person.png" />
-                      <p>Digital Communication</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo17()">
-                    <td>
-                      <img src="./img/good-person.png" />
-                      <p>Principle of STM32</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>`;
-}
-
-function updateSubVideo1() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/videoseries?list=PLp722n3WNwaXnQG9P8YgNc0z_bkbM7ev1" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo2() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/videoseries?list=PLp722n3WNwaUGJCYm1IdIdXxB04KQZHPa" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo3() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/videoseries?list=PLp722n3WNwaUYXztxCAlHshQEHAQHrbXF" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo4() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/videoseries?list=PLp722n3WNwaVJL-gINJFgGQ3fogordQRI" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-function updateSubVideo5() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/videoseries?list=PLp722n3WNwaWQW5UckKyxL417sh9B1v75" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo6() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/videoseries?list=PLp722n3WNwaWH16qHw4sBDLNvgTPCdbHx" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-function updateSubVideo7() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/videoseries?list=PLp722n3WNwaUMnZWMYUOOhF90UqIwnf6A" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo8() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/videoseries?list=PLp722n3WNwaUe4geytcjR2l3HVSl8hN_-" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo9() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/videoseries?list=PLp722n3WNwaV3-abAGw6MoxXBDFIFdDDB" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-function updateSubVideo10() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/videoseries?list=PLp722n3WNwaUovx-rh7lHYehoK9iU0MuM" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-function updateSubVideo11() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/videoseries?list=PLp722n3WNwaW8OUB55Mj9iBKBdgGKQAnT" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-function updateSubVideo12() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/videoseries?list=PLp722n3WNwaW8it7mIbaAra7N-JEU7P08" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-    
-  </div>
-</div>
-`;
-}
-function updateSubVideo13() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/videoseries?list=PLp722n3WNwaUb_CPN1Kq67AnnD2Akv8PO" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo14() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/videoseries?list=PLp722n3WNwaUclnPbHnA3hx31WTLWW1hd" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo15() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/videoseries?list=PLp722n3WNwaUB7KMzf123oTr4Wvu5F-8t" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo16() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/videoseries?list=PLp722n3WNwaVjPnJ_J98uWw65ido202Tk" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo17() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/videoseries?list=PLp722n3WNwaU5K2Kz0Yvo-540P1IZ0Wg9" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-const userName = sessionStorage.getItem("userName");
-console.log(userName);
-if (userName) {
-  const currentHour = new Date().getHours(); // Lấy giờ hiện tại
-  let greeting;
-
-  // Xác định thông điệp dựa trên giờ
-  if (currentHour < 12) {
-    greeting = "Good morning!";
-  } else if (currentHour < 18) {
-    greeting = "Good afternoon!";
-  } else {
-    greeting = "Good night!";
-  }
-
-  // Hiển thị thông điệp
-  document.getElementById("username").textContent = `${greeting} ${userName}`;
-} else {
-  console.log("Không có tên người dùng trong sessionStorage.");
-}
-
-// .......................Telecom...................................
-function updateChartContent2() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("head").innerHTML = `
-               <h3>Work Visualization</h3>
-              <div>
-                <button id="extbut">External</button>
-                <button id="extbut">Export</button>
-                <button id="extbut3">Raise Concern</button>
-              </div>
-
-`;
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/xGkyZw98Tug" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-
-`;
-
-  document.getElementById("content-data").innerHTML = ` <div class="order">
-              <div class="head">
-                <h3>Work Item</h3>
-                <i class="bx bx-search"></i>
-                <i class="bx bx-filter"></i>
-              </div>
-              <table>
-                <thead>
                   <tr>
-                    <th>Courses</th>
-                    <th>Quantity</th>
-                    <th>Quality</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr onclick= "updateSubVideo1x()">
-                    <td>
-                      <img src="./img/satellite.png" />
-                      <p>Wireless Future</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status completed">In Progress</div></td>
-                    <td><div class="status completed">In Progress</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo2x()">
-                    <td>
-                      <img src="./img/satellite.png" />
-                      <p>ECIT Engineering</p>
-                    </td>
-                    <td>25</td>
-                    <td><div class="status process">New</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo3x()">
-                    <td>
-                      <img src="./img/satellite.png" />
-                      <p>The Explained Channel</p>
-                    </td>
-                    <td>15</td>
-                    <td><div class="status process">New</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo4x()">
-                    <td>
-                      <img src="./img/satellite.png" />
-                      <p>NPTEL-NOC IITM</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Trace</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo5x()">
-                    <td>
-                      <img src="./img/satellite.png" />
-                      <p>GURUKULA</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo6x()">
-                    <td>
-                      <img src="./img/satellite.png" />
-                      <p>Ali Muqaibel</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo7x()">
-                    <td>
-                      <img src="./img/satellite.png" />
-                      <p>Er. Manish Sachdeva</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo8x()">
-                    <td>
-                      <img src="./img/satellite.png" />
-                      <p>Easy Engineering Classes</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo9x()">
-                    <td>
-                      <img src="./img/satellite.png" />
-                      <p>LTE</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo10x()">
-                    <td>
-                      <img src="./img/satellite.png" />
-                      <p>WISLABi</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo11x()">
-                    <td>
-                      <img src="./img/satellite.png" />
-                      <p>alantalkstech</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo12x()">
-                    <td>
-                      <img src="./img/satellite.png" />
-                      <p>Network Direction</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo13x()">
-                    <td>
-                      <img src="./img/satellite.png" />
-                      <p>MATLAB</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo14x()">
-                    <td>
-                      <img src="./img/satellite.png" />
-                      <p>IEEE Spectrum</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo15x()">
-                    <td>
-                      <img src="./img/satellite.png" />
-                      <p>Computer Science Lessons</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo16x()">
-                    <td>
-                      <img src="./img/satellite.png" />
-                      <p>Electronics Subjectified</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo17x()">
-                    <td>
-                      <img src="./img/satellite.png" />
-                      <p>Leslie Rusch</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>`;
-}
-
-function updateSubVideo1x() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/xGkyZw98Tug" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo2x() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/8T7orRAQgic" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo3x() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/kxLcwIMYmr0" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo4x() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/TStEvPx_IWI" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-function updateSubVideo5x() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/xvsuwvqmtyk" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo6x() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/NLcnRoH9kBU" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-function updateSubVideo7x() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/L1luL74ceHc" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo8x() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/GT-tYP8RGIs" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo9x() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/rKy5dOl3Et4" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-function updateSubVideo10x() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/rmYbz11Jct0" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-function updateSubVideo11x() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/xWivTR7YraE" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-function updateSubVideo12x() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/9SIjoeE93lo" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-    
-  </div>
-</div>
-`;
-}
-function updateSubVideo13x() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/57S6av_bRtk" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo14x() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/aacnhn8IcHI" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo15x() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/OLsbONSQFUI" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo16x() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/sFiCgEVpTWs" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo17x() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/i3LBGw8Yle4" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-// ....................................................Process Management...................................
-function updateChartContent3() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("head").innerHTML = `
-               <h3>Work Visualization</h3>
-              <div>
-                <button id="extbut">External</button>
-                <button id="extbut">Export</button>
-                <button id="extbut3">Raise Concern</button>
-              </div>
-
-`;
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/89yWXXIOisk" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-
-`;
-
-  document.getElementById("content-data").innerHTML = ` <div class="order">
-              <div class="head">
-                <h3>Work Item</h3>
-                <i class="bx bx-search"></i>
-                <i class="bx bx-filter"></i>
-              </div>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Courses</th>
-                    <th>Quantity</th>
-                    <th>Quality</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr onclick= "updateSubVideo1xx()">
                     <td>
                       <img src="./img/boy.png" />
-                      <p>Jenkins</p>
+                      <p>Hau Do Trung</p>
                     </td>
-                    <td>10</td>
-                    <td><div class="status completed">In Progress</div></td>
+                    <td>10/09/2024</td>
                     <td><div class="status completed">In Progress</div></td>
                   </tr>
-                  <tr onclick= "updateSubVideo2xx()">
+                  <tr>
+                    <td>
+                      <img src="./img/DHT.png" />
+                      <p>Thang Do Hoang</p>
+                    </td>
+                    <td>25/09/2024</td>
+                    <td><div class="status process">New</div></td>
+                  </tr>
+                  <tr>
                     <td>
                       <img src="./img/man1.png" />
-                      <p>ASIPE</p>
+                      <p>An Nguyen Minh Khoa</p>
                     </td>
-                    <td>25</td>
-                    <td><div class="status process">New</div></td>
+                    <td>15/10/2024</td>
                     <td><div class="status process">New</div></td>
                   </tr>
-                  <tr onclick= "updateSubVideo3xx()">
-                    <td>
-                      <img src="./img/man1.png" />
-                      <p>SDLC</p>
-                    </td>
-                    <td>15</td>
-                    <td><div class="status process">New</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo4xx()">
+                  <tr>
                     <td>
                       <img src="./img/good-person.png" />
-                      <p>BPM</p>
+                      <p>Power User</p>
                     </td>
-                    <td>10</td>
+                    <td>10/10/2003</td>
                     <td><div class="status checking">In Trace</div></td>
-                    <td><div class="status process">New</div></td>
                   </tr>
-                  <tr onclick= "updateSubVideo5xx()">
+                  <tr>
                     <td>
                       <img src="./img/process.png" />
-                      <p>Requirement Management</p>
+                      <p>Process Tracer</p>
                     </td>
                     <td>10</td>
                     <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
                   </tr>
                 </tbody>
               </table>
-            </div>`;
-}
-
-function updateSubVideo1xx() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/89yWXXIOisk" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- MAIN -->
     </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo2xx() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/Ye5-lyOBgNw" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo3xx() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/Fi3_BjVzpqk" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo4xx() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/H8kdXXq-pGU" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-function updateSubVideo5xx() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/DDZrnHmiFBw" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-// ......................................................other channels................................................
-function updateChartContent4() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("head").innerHTML = `
-               <h3>Work Visualization</h3>
-              <div>
-                <button id="extbut">External</button>
-                <button id="extbut">Export</button>
-                <button id="extbut3">Raise Concern</button>
-              </div>
-
-`;
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/vO8M8ygIyA0" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-
-`;
-
-  document.getElementById("content-data").innerHTML = ` <div class="order">
-              <div class="head">
-                <h3>Work Item</h3>
-                <i class="bx bx-search"></i>
-                <i class="bx bx-filter"></i>
-              </div>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Courses</th>
-                    <th>Quantity</th>
-                    <th>Quality</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr onclick= "updateSubVideo1xxx()">
-                    <td>
-                      <img src="./img/boy.png" />
-                      <p>Thang Aucostic (DTCN) </p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status completed">In Progress</div></td>
-                    <td><div class="status completed">In Progress</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo2xxx()">
-                    <td>
-                      <img src="./img/woman.png" />
-                      <p>Co Chi (Physic 1&2) </p>
-                    </td>
-                    <td>25</td>
-                    <td><div class="status process">New</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo3xxx()">
-                    <td>
-                      <img src="./img/boy.png" />
-                      <p>Thay Trang (Data Communication System)</p>
-                    </td>
-                    <td>15</td>
-                    <td><div class="status process">New</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo4xxx()">
-                    <td>
-                      <img src="./img/boy.png" />
-                      <p>Thay Tan (Integrated Circuit & System Design)</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Trace</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo5xxx()">
-                    <td>
-                      <img src="./img/woman.png" />
-                      <p>Co Hai (Calculus 2) </p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                   <tr onclick= "updateSubVideo6xxx()">
-                    <td>
-                      <img src="./img/boy.png" />
-                      <p>Thay Phu (Microprocessor)</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                  <tr onclick= "updateSubVideo7xxx()">
-                    <td>
-                      <img src="./img/boy.png" />
-                      <p>Thay Phuc (C Programming Language)</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                   <tr onclick= "updateSubVideo8xxx()">
-                    <td>
-                      <img src="./img/boy.png" />
-                      <p>Thay Son (FPGA Design)</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                   <tr onclick= "updateSubVideo9xxx()">
-                    <td>
-                      <img src="./img/boy.png" />
-                      <p>Thay Hiep (Microprocessor)</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                   <tr onclick= "updateSubVideo10xxx()">
-                    <td>
-                      <img src="./img/boy.png" />
-                      <p>Anh Toan (General Subject)</p>
-                    </td>
-                    <td>10</td>
-                    <td><div class="status checking">In Check</div></td>
-                    <td><div class="status process">New</div></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>`;
-}
-
-function updateSubVideo1xxx() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/vO8M8ygIyA0" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo2xxx() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/2h2nVXJ437U" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo3xxx() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/y77FfvvFH1M" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo4xxx() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/4h74-JSFctI" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo5xxx() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/Yp0sSxq6ptU" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo6xxx() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/os462yqOEwI" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo7xxx() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/YIXrJGX4WT0" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo8xxx() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/m4l8dd18yVc" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo9xxx() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/CiTA5FwQhwc" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-
-function updateSubVideo10xxx() {
-  // Thay đổi nội dung trong phần chart
-  document.getElementById("chart").innerHTML = `<div class="chart">
-  <div id="chart">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/aGwYP_Hrb98" 
-        title="YouTube video playlist player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</div>
-`;
-}
-// ......................................................................................................
-document
-  .getElementById("traceBoxLink")
-  .addEventListener("click", function (event) {
-    event.preventDefault(); // Ngăn chặn chuyển trang mặc định
-
-    if (userName === "Do Trung Hau" || userName === "Vũ An") {
-      window.location.href = "infor.html"; // Chuyển hướng nếu user hợp lệ
-    } else {
-      alert("User account does not have permission to access this page!");
-    }
-  });
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="report.js"></script>
+  </body>
+</html>
