@@ -946,7 +946,7 @@ function sendMessage() {
               .then((url) => {
                 let downloadLink = document.createElement("a");
                 downloadLink.href = url;
-                downloadLink.download = bestMatch;
+                downloadLink.target = "_blank"; // Mở file trong tab mới
                 downloadLink.innerHTML = `⬇️ ${bestMatch}`;
                 downloadLink.style.display = "inline-block";
                 downloadLink.style.marginTop = "0px";
