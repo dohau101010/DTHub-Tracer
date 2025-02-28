@@ -409,7 +409,7 @@ function endQuiz() {
   clearInterval(timer);
 
   // Kiểm tra điểm và cập nhật giá trị nếu cần
-  if (score >= 4) {
+  if (score >= 3) {
     const userName = sessionStorage.getItem("userName");
 
     if (userName) {
